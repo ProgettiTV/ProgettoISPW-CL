@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcb.GUIClass.ConfermaRisposteGUI">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0">
+         <image>
+            <Image url="@6839531-grey-wallpaper.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="budgetButton3" layoutX="737.0" layoutY="496.0" mnemonicParsing="false" onAction="#vaiAComponenti" prefHeight="77.0" prefWidth="228.0" text="Conferma">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="budgetButton1" layoutX="371.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="77.0" prefWidth="228.0" text="Annulla">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+      <Button layoutX="53.0" layoutY="535.0" mnemonicParsing="false" onAction="#switchToUserProfile" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-fill: transparent;" text="Button">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@216437_back_arrow_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text fill="#ccfd09" layoutX="1068.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resoconto">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="66.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Logo.jpeg" />
+         </image>
+      </ImageView>
+      <Button layoutX="1031.0" layoutY="535.0" mnemonicParsing="false" onAction="#switchToEntry" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-fill: transparent;" text="Button">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@1564506_close_exit_logout_power_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="budgetTextField" layoutX="404.0" layoutY="290.0" />
+      <TextField fx:id="utilizzoTextField" layoutX="796.0" layoutY="289.0" />
+      <Text fill="LIME" layoutX="308.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budget Selezionato">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fill="LIME" layoutX="738.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilizzo Selezionato">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
