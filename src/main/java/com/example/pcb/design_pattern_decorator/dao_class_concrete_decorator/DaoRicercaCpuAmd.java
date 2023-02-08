@@ -1,12 +1,11 @@
 package com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator;
 
+import com.example.pcb.dao_class.DaoLoginConnection;
+
 import java.sql.*;
 
 public class DaoRicercaCpuAmd {
-    private static final String databaseName = "amazon_db";
-    private static final String databaseUser = "root";
-    private static final String databasePassword = "ciao";
-    private static final String url = "jdbc:mysql://localhost/"+ databaseName;
+
     private static Connection connectionCpuAmd;
     private String risultatoRicerca;
     private String risultatoCaratteristica;
@@ -14,22 +13,11 @@ public class DaoRicercaCpuAmd {
 
     public DaoRicercaCpuAmd(int budgetPreso){
         this.ricercavalore=budgetPreso;
+        connectionCpuAmd= DaoLoginConnection.getDBConnection();
+        // da fare in tutti i dao;
 
     }
-    public static void getDaoCpuConnection() throws SQLException {
 
-        try{
-            if(connectionCpuAmd ==null){
-                connectionCpuAmd = DriverManager.getConnection(url, databaseUser, databasePassword);
-
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-
-    }
     public void cercaValore() throws SQLException {
 
         Statement statement;
