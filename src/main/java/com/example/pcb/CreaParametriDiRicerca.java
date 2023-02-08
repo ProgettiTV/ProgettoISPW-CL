@@ -18,7 +18,7 @@ public class CreaParametriDiRicerca {
 
             float  percentuale1= (float) (percentuale * 0.01);
             int risultato= (int) ((budget*percentuale1));
-
+    //prova mmerge
             listaComp[i]=risultato;
         }
         return listaComp;
