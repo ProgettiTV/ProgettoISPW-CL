@@ -52,11 +52,7 @@ public  class DomandeUtente {
 
             DaoBudget daoBudget=new DaoBudget(budgetProvissorio);
 
-            try {
-                DaoBudget.getDaoBudgetConnection();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+
             try {
                 daoBudget.cercaValore();
             } catch (DaoException e) {

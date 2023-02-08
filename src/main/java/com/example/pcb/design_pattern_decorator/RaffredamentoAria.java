@@ -29,11 +29,7 @@ public class RaffredamentoAria extends Decorator{
     public void cercaRaffredamentoAria(){
         DaoRicercaRaffredamentoAria daoRicercaRaffredamentoAria = new DaoRicercaRaffredamentoAria(this.budgetPerRaffredamentoAcqua);
 
-        try {
-            DaoRicercaRaffredamentoAria.getDaoRaffredamentoAriaConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
         try {
             daoRicercaRaffredamentoAria.cercaValore();
         } catch (SQLException e) {

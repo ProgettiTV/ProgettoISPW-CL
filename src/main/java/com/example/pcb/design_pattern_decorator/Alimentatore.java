@@ -29,11 +29,6 @@ public class Alimentatore extends  Decorator{
     public void cercaAlimentatore(){
         DaoRicercaAlimentatore daoRicercaAlimentatore= new DaoRicercaAlimentatore(this.budgetPerAlimentatore);
         try {
-            DaoRicercaAlimentatore.getDaoAlimentatoreConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        try {
             daoRicercaAlimentatore.cercaValore();
         } catch (SQLException e) {
             throw new RuntimeException(e);

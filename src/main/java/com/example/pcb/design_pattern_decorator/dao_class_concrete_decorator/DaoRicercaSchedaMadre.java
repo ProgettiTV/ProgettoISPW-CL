@@ -1,13 +1,11 @@
 package com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator;
 
+import com.example.pcb.dao_class.DBConnection;
+
 import java.sql.*;
 
 public class DaoRicercaSchedaMadre {
-    private static final String databaseName = "amazon_db";
-    private static final String databaseUser = "root";
-    private static final String databasePassword = "ciao";
-    private static final String url = "jdbc:mysql://localhost/"+ databaseName;
-    private static Connection connection;
+
     private String risultatoRicerca;
     private String risultatoCaratteristica;
     private final int ricercavalore;
@@ -16,21 +14,9 @@ public class DaoRicercaSchedaMadre {
         this.ricercavalore=budgetPreso;
 
     }
-    public static void getDaoSchedaMadreConnection() throws SQLException {
 
-        try{
-            if(connection==null){
-                connection = DriverManager.getConnection(url, databaseUser, databasePassword);
-
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-    }
     public void cercaValore() throws SQLException {
-
+        Connection connection= DBConnection.getDBConnection();
         Statement statement;
 
         try {

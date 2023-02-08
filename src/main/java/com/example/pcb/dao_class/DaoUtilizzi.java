@@ -4,11 +4,7 @@ import java.sql.*;
 
 public class DaoUtilizzi {
 
-    private static final String databaseName = "parametridb";
-    private static final String databaseUser = "root";
-    private static final String databasePassword = "ciao";
-    private static final String url = "jdbc:mysql://localhost/"+ databaseName;
-    private static Connection connection;
+
     private String[] risultatoUtilizzo;
     private final String ricercaUtilizzo;
 
@@ -18,23 +14,11 @@ public class DaoUtilizzi {
 
     }
 
-    public static void getDaoUtilizziConnection() throws SQLException {
 
-        try{
-            if(connection ==null){
-                connection = DriverManager.getConnection(url, databaseUser, databasePassword);
-
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-    }
 
 
     public  void cercaCaratteristiche()throws SQLException {
-
+        Connection connection=DBConnection.getDBConnection();
         Statement statement;
 
         String[] result = new String[9];

@@ -30,11 +30,6 @@ public class SchedaMadre extends Decorator{
 
 
         try {
-            DaoRicercaSchedaMadre.getDaoSchedaMadreConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        try {
             daoRicercaSchedaMadre.cercaValore();
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -32,11 +32,6 @@ public class Ssd extends  Decorator{
         DaoRicercaSsd daoRicercaSsd= new DaoRicercaSsd(this.budgetPerSsd);
 
         try {
-            DaoRicercaSsd.getDaoSsdConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        try {
             daoRicercaSsd.cercaValore();
         } catch (SQLException e) {
             throw new RuntimeException("errore in ssd");

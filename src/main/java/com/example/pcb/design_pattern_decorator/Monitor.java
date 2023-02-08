@@ -30,11 +30,7 @@ public class Monitor extends Decorator{
     public void cercaMonitor(){
         DaoRicercaMonitor daoRicercaMonitor= new DaoRicercaMonitor(this.budgetPerMonitor);
 
-        try {
-            DaoRicercaMonitor.getDaoMonitorConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
         try {
             daoRicercaMonitor.cercaValore();
         } catch (SQLException e) {

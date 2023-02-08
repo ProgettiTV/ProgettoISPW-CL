@@ -1,25 +1,25 @@
 package com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator;
 
-import com.example.pcb.dao_class.DaoLoginConnection;
+import com.example.pcb.dao_class.DBConnection;
 
 import java.sql.*;
 
 public class DaoRicercaCpuAmd {
 
-    private static Connection connectionCpuAmd;
     private String risultatoRicerca;
     private String risultatoCaratteristica;
     private final int ricercavalore;
 
     public DaoRicercaCpuAmd(int budgetPreso){
         this.ricercavalore=budgetPreso;
-        connectionCpuAmd= DaoLoginConnection.getDBConnection();
-        // da fare in tutti i dao;
+
+
 
     }
 
     public void cercaValore() throws SQLException {
 
+        Connection connectionCpuAmd= DBConnection.getDBConnection();
         Statement statement;
 
 
