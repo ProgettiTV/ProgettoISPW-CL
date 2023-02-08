@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class DaoBudget extends AbstractSubject{
     private static final String databaseName = "parametridb";
     private static final String databaseUser = "root";
-    private static final String databasePassword = "ciao";
+    private static final String databasePassword = "pierfrancesco";
     private static final String url = "jdbc:mysql://localhost/"+ databaseName;
     private static Connection connection;
     private int valoreRicercaBudget;
