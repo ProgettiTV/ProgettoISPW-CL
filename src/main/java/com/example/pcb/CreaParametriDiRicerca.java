@@ -20,6 +20,8 @@ public class CreaParametriDiRicerca {
             int risultato= (int) ((budget*percentuale1));
     //prova mmerge
             //prova merge 3
+
+            //prova merge 2
             listaComp[i]=risultato;
         }
         return listaComp;
