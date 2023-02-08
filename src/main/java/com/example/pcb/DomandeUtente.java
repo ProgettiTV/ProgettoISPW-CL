@@ -24,6 +24,7 @@ public  class DomandeUtente {
 
     public DomandeUtente(){
 
+        //costruttore
     }
 
     public void prendB(BeanBudget b){
@@ -39,7 +40,6 @@ public  class DomandeUtente {
 
     public void getMostraResoconto(BeanMostraResoconto mR) {
         this.mostraResoconto=mR;
-        System.out.println("indirizzo mostraResoconto Bean  "+ mostraResoconto);
         invioResoconto();
     }
 

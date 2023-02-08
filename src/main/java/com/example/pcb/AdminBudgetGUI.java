@@ -17,7 +17,7 @@ public class AdminBudgetGUI {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    public InserisciBudgetGUI inserisciBudgetGUI;
+    private final InserisciBudgetGUI inserisciBudgetGUI;
 
 
     public AdminBudgetGUI(){

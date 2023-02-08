@@ -16,7 +16,7 @@ public class DaoUtilizzi {
 
 
     public DaoUtilizzi() {
-
+        //costruttore
     }
 
     public void setNomeRicercaUtilizzo(String nomeUtilizzo){
@@ -53,7 +53,7 @@ public class DaoUtilizzi {
             for(int i=0; i<9; i++) {
                 rispostaUtilizzoDB[i]=queryUtilizzoResult.getString(i+1);
             }
-            System.out.println(Arrays.toString(rispostaUtilizzoDB));
+
         }
     }
     public String[] returnValoreUtilizzoDB(){
@@ -66,7 +66,7 @@ public class DaoUtilizzi {
         stringaAggiornamentoUtilizzo = stringaPercentualiUtilizzo.split(",");
         String updateUtilizzoQuery =  "UPDATE parametri_utilizzo SET C_CPU = '" + stringaAggiornamentoUtilizzo[0] + "', RAM = '" + stringaAggiornamentoUtilizzo[1] + "', SCHEDA_VIDEO = '" + stringaAggiornamentoUtilizzo[2] + "', SSD = '" + stringaAggiornamentoUtilizzo[3] + "', MONITOR = '" + stringaAggiornamentoUtilizzo[4] + "', RAFFREDDAMENTO = '" + stringaAggiornamentoUtilizzo[5] + "', C_CASE = '" + stringaAggiornamentoUtilizzo[6] + "', SCHEDA_MADRE = '" + stringaAggiornamentoUtilizzo[7] + "', ALIMENTATORE = '" + stringaAggiornamentoUtilizzo[8] + "' WHERE nome_utilizzo = '" + stringaRicercaUtilizzo + "'";
 
-        System.out.println(updateUtilizzoQuery);
+
 
         Statement statement = connection.createStatement();
         statement.executeUpdate(updateUtilizzoQuery);

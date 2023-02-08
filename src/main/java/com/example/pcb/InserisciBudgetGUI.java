@@ -15,7 +15,7 @@ import java.util.Objects;
 
 public class InserisciBudgetGUI extends AbstractObserver {
 
-    private BeanSelezionaBudget riferimentoBeanVecchio;
+
     private String mostraVecchioB;
     @FXML
     private TextField oldBudget;
@@ -27,7 +27,7 @@ public class InserisciBudgetGUI extends AbstractObserver {
     private Scene scene;
     private Parent root;
 
-    private int budgetSelezionato;
+
     private BeanMostraVecchioBudget riferimento;
     private int mostraIdVecchioB;
     private ModificaParametri modificaParametri;
@@ -72,7 +72,7 @@ public class InserisciBudgetGUI extends AbstractObserver {
          this.mostraVecchioB= riferimento.returnVecchioB();
          this.mostraIdVecchioB = riferimento.returnIdVecchioB();
 
-        //oldBudget.setText(mostraVecchioB);
+
     }
 
     public void prova() {
@@ -83,14 +83,9 @@ public class InserisciBudgetGUI extends AbstractObserver {
         String valoreInserito = newBudget.getText();
         BeanModificaBudget beanModificaBudget = new BeanModificaBudget();
         beanModificaBudget.prendiValoreInserito(valoreInserito);
-        System.out.println("budget inserito: " + valoreInserito);
-        System.out.println("budget nel bean: " + beanModificaBudget.returnBudgetInserito());
 
-        //ModificaParametri modificaParametri = new ModificaParametri();
-
-        System.out.println("sto invocando add");
         DaoBudget.getInstance().addObserver(this);
-        System.out.println("ho invocato add");
+
 
         modificaParametri.prendiRiferimentoBeanModificaBudget(beanModificaBudget);
 
@@ -100,7 +95,7 @@ public class InserisciBudgetGUI extends AbstractObserver {
     @Override
     public void updateBudget(int budget) {
         obsTextField.setText(String.valueOf(budget));
-        System.out.println("ciaociao");
+
     }
 
 }

@@ -14,8 +14,6 @@ public class DaoRicercaAlimentatore {
 
     public   DaoRicercaAlimentatore(int budgetPreso){
         this.ricercavalore=budgetPreso;
-        System.out.println("DAO riceve B  "+ ricercavalore );
-
 
     }
     public static void  getDaoAlimentatoreConnection() throws SQLException {

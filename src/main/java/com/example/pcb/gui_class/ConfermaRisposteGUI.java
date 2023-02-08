@@ -18,9 +18,9 @@ import java.util.Objects;
 
 public class ConfermaRisposteGUI {
 
-    public DomandeUtente riferimentoCapplicativo;
-    public ComponentiGUI componentiGUI;
-    public BeanMostraResoconto mostraResoconto;
+    private DomandeUtente riferimentoCapplicativo;
+    private ComponentiGUI componentiGUI;
+    private BeanMostraResoconto mostraResoconto;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -84,7 +84,7 @@ public class ConfermaRisposteGUI {
 
 
         String risposta = ((Button)ae.getSource()).getText();
-        System.out.println("CG Conferma selezionato:" + risposta);
+
         BeanConferma beanConferma = new BeanConferma(risposta);
 
 

@@ -72,9 +72,9 @@ public class RicercaComponenti {
         }
 
 
-        Case case_component=new Case( this.component, listaBudget[6]);
-        this.component =  case_component;
-        case_component.cercaCase();
+        Case caseComponent=new Case( this.component, listaBudget[6]);
+        this.component =  caseComponent;
+        caseComponent.cercaCase();
 
         SchedaMadre schedaMadre=new SchedaMadre( this.component, listaBudget[7]);
         this.component = schedaMadre;
@@ -91,7 +91,7 @@ public class RicercaComponenti {
         this.component.getCaratteristica(caratteristica);
 
         CalcoloCompatibilita calcoloCompatibilita=new CalcoloCompatibilita(caratteristica);
-        int percentualeCompatibilita=calcoloCompatibilita.CalcoloPercentualeCompatibilita();
+        int percentualeCompatibilita=calcoloCompatibilita.calcoloPercentualeCompatibilita();
 
         BeanStampaConfigurazione beanStampaConfigurazione=new BeanStampaConfigurazione(configurazioneFinale);
         BeanStampaCompatibilita beanStampaCompatibilita= new BeanStampaCompatibilita(percentualeCompatibilita);

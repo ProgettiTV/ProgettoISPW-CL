@@ -1,8 +1,8 @@
 package com.example.pcb.bean_class;
 
 public class BeanMostraResoconto {
-    public String mostraB;
-    public String mostraU;
+    private String mostraB;
+    private String mostraU;
     public BeanMostraResoconto() {
 
     }
@@ -18,7 +18,7 @@ public class BeanMostraResoconto {
 
     public void getmostraU(String u1){
         this.mostraU=u1;
-        System.out.println("stringa finale Utilizzo in MostraResoconto  " + mostraU);
+
     }
     public String returnStampaB(){
         return mostraB;
