@@ -1,24 +1,30 @@
 package com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator;
 
+import java.io.FileInputStream;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Properties;
 
 public class DBConnectionAmazon {
-    private static final String databaseName = "amazon_db";
-    private static final String databaseUser = "root";
-    private static final String databasePassword = "pierfrancesco";
-    private static final String url = "jdbc:mysql://localhost/"+ databaseName;
+
     private static Connection connection;
 
     private DBConnectionAmazon(){
 
     }
 
-    public static Connection getDBConnectionAmazon(){
+    public static Connection getDBConnectionAmazon() throws IOException {
 
         try{
+            Properties prop = new Properties();
+            prop.load(new FileInputStream("C:\\Users\\pf23l\\OneDrive\\Desktop\\ISPW TOTAL\\ProgettoISPW\\src\\main\\java\\com\\example\\pcb\\design_pattern_decorator\\dao_class_concrete_decorator\\credenzialiAmazonDB"));
+            String databaseProprietario = prop.getProperty("databaseUser");
+            String databaseAmazonPassword = prop.getProperty("databasePassword");
+            String urlDbAmazon = prop.getProperty("url");
             if(connection==null){
-                connection = DriverManager.getConnection(url, databaseUser, databasePassword);
+                connection = DriverManager.getConnection(urlDbAmazon, databaseProprietario, databaseAmazonPassword);
 
             }
 

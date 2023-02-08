@@ -2,6 +2,7 @@ package com.example.pcb.design_pattern_decorator;
 
 import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaSchedaMadre;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -32,6 +33,8 @@ public class SchedaMadre extends Decorator{
         try {
             daoRicercaSchedaMadre.cercaValore();
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         this.risultatoRicerca= daoRicercaSchedaMadre.returnComponenteSchedaMadre();

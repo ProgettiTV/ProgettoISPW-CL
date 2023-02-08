@@ -2,6 +2,7 @@ package com.example.pcb.design_pattern_decorator;
 
 import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaCpuAmd;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -32,17 +33,12 @@ public class CpuAmd extends Decorator{
     public void cercaCpuAmd(){
 
         DaoRicercaCpuAmd daoRicercaCpu = new DaoRicercaCpuAmd(this.budgetPerCpu);
-        /*
-        try {
-            DaoRicercaCpuAmd.getDaoCpuConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
 
-         */
         try {
             daoRicercaCpu.cercaValore();
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         this.risultatoRicerca= daoRicercaCpu.returnComponenteCpuAmd();

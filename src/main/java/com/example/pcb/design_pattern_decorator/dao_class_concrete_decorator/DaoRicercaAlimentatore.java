@@ -2,6 +2,7 @@ package com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator;
 
 import com.example.pcb.dao_class.DBConnection;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class DaoRicercaAlimentatore {
@@ -18,7 +19,7 @@ public class DaoRicercaAlimentatore {
 
 
 
-    public void cercaValore() throws SQLException {
+    public void cercaValore() throws SQLException , IOException {
         Connection connection= DBConnectionAmazon.getDBConnectionAmazon();
         Statement statement;
 
