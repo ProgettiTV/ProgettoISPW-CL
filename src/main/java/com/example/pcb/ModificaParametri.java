@@ -1,9 +1,9 @@
 package com.example.pcb;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.List;
+
 
 public class ModificaParametri {
     private int vecchioB;
@@ -19,23 +19,11 @@ public class ModificaParametri {
     private InserisciUtilizzoGUI inserisciUtilizzoGUI;
     private BeanModificaBudget beanModificaBudget;
 
-    private ModificaParametri modificaParametri;
+
     private BeanModificaUtilizzo beanModificaUtilizzo;
 
     private String idUtilizzo;
 
-
-
-    /*public void addObserver(BudgetObserver observer) {
-        observers.add(observer);
-    }
-
-    public void notifyObservers() {
-        int budget = Integer.parseInt(concreteSubjectBudget.returnNuovoB());
-        for (BudgetObserver observer : observers) {
-            observer.update(budget);
-        }
-    }*/
 
 
     public void prendiRiferimentoBean(BeanSelezionaBudget beanSelezionaBudget) throws SQLException {
@@ -48,15 +36,13 @@ public class ModificaParametri {
     public void setVecchioB() throws SQLException {
         this.vecchioB = beanSelezionaBudget.returnB();
         this.idVecchioB = beanSelezionaBudget.returnB();
-        //inserisciBudgetGUI.prendiRiferimentoCA();
+
         DaoBudget daoBudgetAdmin = DaoBudget.getInstance();
         daoBudgetAdmin.setValoreRicercaBudget(vecchioB);
         DaoBudget.getDaoBudgetConnection();
         daoBudgetAdmin.cercaBudget();
         this.vecchioB = daoBudgetAdmin.returnValoreBudgetDB();
-        System.out.println("valore vecchioB dopo db: "+vecchioB);
 
-        System.out.println("budget vecchio ricevuto a CA dopo db" +vecchioB);
         inviaBudgetVecchio();
     }
     public void inviaBudgetVecchio(){
@@ -114,13 +100,11 @@ public class ModificaParametri {
         DaoUtilizzi.getDaoUtilizziConnection();
         daoUtilizziAdmin.aggiornaUtilizzo();
         
-        inviaUtilizzoPerModifica(daoUtilizziAdmin);
+
 
     }
 
-    private void inviaUtilizzoPerModifica(DaoUtilizzi daoUtilizziAdmin) {
-        //this.concreteSubjectUtilizzo = new ConcreteSubjectUtilizzo(nuovoU);
-    }
+
 
     public void setNuovoB() throws SQLException {
         this.nuovoB = beanModificaBudget.returnBudgetInserito();
@@ -131,15 +115,9 @@ public class ModificaParametri {
         DaoBudget.getDaoBudgetConnection();
         daoBudgetAdmin.aggiornaBudget();
 
-        //this.concreteSubjectBudget = new ConcreteSubjectBudget(nuovoB);
-        //notifyObservers(Integer.parseInt(nuovoB));
 
-        inviaBudgetPerModifica(daoBudgetAdmin);
     }
-    public void inviaBudgetPerModifica(DaoBudget daoBudgetAdmin){
-        //this.concreteSubjectBudget = new ConcreteSubjectBudget(nuovoB);
-        //daoBudgetAdmin.setNuovoValoreBudget();
-    }
+
 
 
 
