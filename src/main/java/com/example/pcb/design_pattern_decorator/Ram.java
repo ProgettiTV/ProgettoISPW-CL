@@ -34,11 +34,7 @@ public class Ram extends Decorator{
         DaoRicercaRam daoRicercaRam= new DaoRicercaRam(this.budgetPerRam);
 
 
-        try {
-            DaoRicercaRam.getDaoRamConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
         try {
             daoRicercaRam.cercaValore();
         } catch (SQLException e) {

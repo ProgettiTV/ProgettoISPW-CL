@@ -32,11 +32,14 @@ public class CpuAmd extends Decorator{
     public void cercaCpuAmd(){
 
         DaoRicercaCpuAmd daoRicercaCpu = new DaoRicercaCpuAmd(this.budgetPerCpu);
+        /*
         try {
             DaoRicercaCpuAmd.getDaoCpuConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+         */
         try {
             daoRicercaCpu.cercaValore();
         } catch (SQLException e) {

@@ -30,11 +30,7 @@ public class CpuIntel extends Decorator{
     public void cercaCpuIntel(){
 
         DaoRicercaCpuIntel daoRicercaCpu= new DaoRicercaCpuIntel(this.budgetPerCpu);
-        try {
-            DaoRicercaCpuIntel.getDaoCpuConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
         try {
             daoRicercaCpu.cercaValore();
         } catch (SQLException e) {

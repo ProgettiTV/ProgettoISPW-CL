@@ -29,11 +29,7 @@ public class Case extends Decorator{
     public void cercaCase(){
         DaoRicercaCase daoRicercaCase= new DaoRicercaCase(this.budgetPerCase);
 
-        try {
-            DaoRicercaCase.getDaoCaseConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
         try {
             daoRicercaCase.cercaValore();
         } catch (SQLException e) {

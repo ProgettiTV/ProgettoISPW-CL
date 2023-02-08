@@ -31,11 +31,6 @@ public class SchedaVideo extends Decorator{
 
 
         try {
-            DaoRicercaSchedaVideo.getDaoSchedaVideoConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        try {
             daoRicercaSchedaVideo.cercaValore();
         } catch (SQLException e) {
             throw new RuntimeException(e);

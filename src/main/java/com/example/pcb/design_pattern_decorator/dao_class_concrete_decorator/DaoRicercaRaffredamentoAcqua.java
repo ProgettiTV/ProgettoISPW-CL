@@ -1,13 +1,11 @@
 package com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator;
 
+import com.example.pcb.dao_class.DBConnection;
+
 import java.sql.*;
 
 public class DaoRicercaRaffredamentoAcqua {
-    private static final String databaseName = "amazon_db";
-    private static final String databaseUser = "root";
-    private static final String databasePassword = "ciao";
-    private static final String url = "jdbc:mysql://localhost/"+ databaseName;
-    private static Connection connectionAffredamentoAcqua;
+
     private String risultatoRicerca;
     private String risultatoCaratteristica;
 
@@ -17,22 +15,9 @@ public class DaoRicercaRaffredamentoAcqua {
         this.ricercavalore=budgetPreso;
 
     }
-    public static void getDaoRaffredamentoAcquaConnection() throws SQLException {
 
-        try{
-            if(connectionAffredamentoAcqua ==null){
-                connectionAffredamentoAcqua = DriverManager.getConnection(url, databaseUser, databasePassword);
-
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-
-    }
     public void cercaValore() throws SQLException {
-
+        Connection connectionAffredamentoAcqua= DBConnectionAmazon.getDBConnectionAmazon();
         Statement statement;
 
 

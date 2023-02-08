@@ -4,15 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 
-public class DaoLoginConnection {
+public class DBConnection {
 
-    private static final String databaseName = "logindb";
+    private static final String databaseName = "parametridb";
     private static final String databaseUser = "root";
-    private static final String databasePassword = "ciao";
+    private static final String databasePassword = "pierfrancesco";
     private static final String url = "jdbc:mysql://localhost/"+ databaseName;
     private static Connection connection;
 
-    private DaoLoginConnection(){
+    private DBConnection(){
 
     }
 
@@ -29,11 +29,5 @@ public class DaoLoginConnection {
         }
         return connection;
     }
-
-
-
-
-
-
 
 }
