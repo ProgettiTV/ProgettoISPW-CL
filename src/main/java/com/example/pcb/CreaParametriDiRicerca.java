@@ -7,8 +7,6 @@ public class CreaParametriDiRicerca {
 
     public CreaParametriDiRicerca() {
 
-        //costruttore
-
     }
 
     public Integer[] produciParametri(int budget, String[] listaCaratteristicheUtilizzo) {
