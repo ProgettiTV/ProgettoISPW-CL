@@ -16,7 +16,7 @@ public class DaoRicercaRaffredamentoAria {
     }
 
     public void cercaValore() throws SQLException {
-        Connection connectionAffredamentoAria= DBConnection.getDBConnection();
+        Connection connectionAffredamentoAria= DBConnectionAmazon.getDBConnectionAmazon();
         Statement statement;
 
 

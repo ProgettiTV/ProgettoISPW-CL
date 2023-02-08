@@ -19,7 +19,7 @@ public class DaoRicercaCpuAmd {
 
     public void cercaValore() throws SQLException {
 
-        Connection connectionCpuAmd= DBConnection.getDBConnection();
+        Connection connectionCpuAmd= DBConnectionAmazon.getDBConnectionAmazon();
         Statement statement;
 
 

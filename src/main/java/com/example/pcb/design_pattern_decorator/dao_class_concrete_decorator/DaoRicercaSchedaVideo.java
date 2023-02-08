@@ -16,7 +16,7 @@ public class DaoRicercaSchedaVideo {
     }
 
     public void cercaValore() throws SQLException {
-        Connection connection= DBConnection.getDBConnection();
+        Connection connection= DBConnectionAmazon.getDBConnectionAmazon();
         Statement statement;
 
         try {

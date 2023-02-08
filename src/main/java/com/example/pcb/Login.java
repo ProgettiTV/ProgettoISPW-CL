@@ -62,7 +62,7 @@ public class Login {
         Connection myConnection = DBConnection.getDBConnection();
 
 
-        String verifyLoginQuery = "SELECT count(1), Role FROM UserAccounts WHERE username = '" + usernameTextField.getText() + "' AND password = '" + passwordPasswordField.getText() + "'";
+        String verifyLoginQuery = "SELECT count(1), Role FROM useraccounts WHERE username = '" + usernameTextField.getText() + "' AND password = '" + passwordPasswordField.getText() + "'" +" GROUP BY Role";
 
         try{
 
