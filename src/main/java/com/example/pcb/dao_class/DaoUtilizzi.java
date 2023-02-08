@@ -1,5 +1,6 @@
 package com.example.pcb.dao_class;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class DaoUtilizzi {
@@ -17,7 +18,7 @@ public class DaoUtilizzi {
 
 
 
-    public  void cercaCaratteristiche()throws SQLException {
+    public  void cercaCaratteristiche() throws SQLException, IOException {
         Connection connection=DBConnection.getDBConnection();
         Statement statement;
 

@@ -2,6 +2,7 @@ package com.example.pcb.design_pattern_decorator;
 
 import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaCpuIntel;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -34,6 +35,8 @@ public class CpuIntel extends Decorator{
         try {
             daoRicercaCpu.cercaValore();
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         this.risultatoRicerca= daoRicercaCpu.returnComponenteCpuIntel();

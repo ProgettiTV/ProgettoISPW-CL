@@ -52,7 +52,7 @@ public class Registrazione {
 
     }
 
-    public void registerUser(ActionEvent event){
+    public void registerUser(ActionEvent event) throws IOException {
 
         Connection myConnection = DBConnection.getDBConnection();
 

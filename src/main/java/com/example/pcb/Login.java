@@ -57,7 +57,7 @@ public class Login {
 
     }
 
-    public void validateLogin(ActionEvent event){
+    public void validateLogin(ActionEvent event) throws IOException {
 
         Connection myConnection = DBConnection.getDBConnection();
 

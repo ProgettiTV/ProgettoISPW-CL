@@ -4,6 +4,7 @@ package com.example.pcb.design_pattern_decorator;
 
 import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaRam;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -38,6 +39,8 @@ public class Ram extends Decorator{
         try {
             daoRicercaRam.cercaValore();
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         this.risultatoRicerca= daoRicercaRam.returnComponenteRam();
