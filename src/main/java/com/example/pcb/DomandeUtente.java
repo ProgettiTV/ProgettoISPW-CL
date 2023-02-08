@@ -65,7 +65,7 @@ public  class DomandeUtente {
                 throw new RuntimeException(e);
             }
 
-
+            //ok
             DaoUtilizzi daoUtilizzi=new DaoUtilizzi(utilizzoProvissorio);
             try {
                 DaoUtilizzi.getDaoUtilizziConnection();

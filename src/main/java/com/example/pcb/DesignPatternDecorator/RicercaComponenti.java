@@ -23,6 +23,7 @@ public class RicercaComponenti {
         this.caratteristica = new ArrayList<>();
 
     }
+    //ok
     public void creaConfigurazione(){
 
         double randomCpu =  Math.random()*10;

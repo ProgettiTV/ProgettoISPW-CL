@@ -7,6 +7,8 @@ public class CreaParametriDiRicerca {
     public ComponentiGUI inviaRiferimentoComponenti;
     private Integer[] listaComp=new Integer[9] ;
 
+    //ok
+
 
 
     public CreaParametriDiRicerca() {
