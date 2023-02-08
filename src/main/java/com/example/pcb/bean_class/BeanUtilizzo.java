@@ -2,7 +2,7 @@ package com.example.pcb.bean_class;
 
 public class BeanUtilizzo {
 
-    public String ricercaTipoUtilizzo;
+    private final String ricercaTipoUtilizzo;
 
     public BeanUtilizzo(String risposta) {
 

@@ -7,6 +7,8 @@ public class CreaParametriDiRicerca {
 
     public CreaParametriDiRicerca() {
 
+        //costruttore
+
     }
 
     public Integer[] produciParametri(int budget, String[] listaCaratteristicheUtilizzo) {
@@ -17,7 +19,7 @@ public class CreaParametriDiRicerca {
             int percentuale = (Integer.parseInt(listaCaratteristicheUtilizzo[i]));
 
             float  percentuale1= (float) (percentuale * 0.01);
-            int risultato= (int) ((budget*percentuale1));
+            int risultato= (int) (budget*percentuale1);
 
             listaComp[i]=risultato;
         }

@@ -2,7 +2,7 @@ package com.example.pcb;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Observer;
+
 
 public class DaoBudget extends AbstractSubject{
     private static final String databaseName = "parametridb";
@@ -12,9 +12,9 @@ public class DaoBudget extends AbstractSubject{
     private static Connection connection;
     private int valoreRicercaBudget;
     private String rispostaBudgetDB;
-    private String budgetDaInserire;
+
     private String valoreNuovoBudget;
-    private int budgetObs;
+
     private static DaoBudget instance;
 
 
@@ -37,7 +37,7 @@ public class DaoBudget extends AbstractSubject{
     public void setNuovoValoreBudget(String valore){
 
         this.valoreNuovoBudget = valore;
-        System.out.println("vnb: " + valoreNuovoBudget);
+
     }
 
     public static Connection getDaoBudgetConnection(){
@@ -64,14 +64,14 @@ public class DaoBudget extends AbstractSubject{
         while (querySearchBudgetResult.next()){
             rispostaBudgetDB = querySearchBudgetResult.getString(1);
 
-            System.out.println(rispostaBudgetDB);
+
         }
     }
 
     public void aggiornaBudget() throws SQLException {
 
 
-        System.out.println("nb: "+ valoreNuovoBudget + "id: " + valoreRicercaBudget);
+
         String updateBudgetQuery = "UPDATE parametri_budget SET Valore = '" + valoreNuovoBudget + "' WHERE idparametri_budget = " + valoreRicercaBudget;
         Statement statement = connection.createStatement();
         statement.executeUpdate(updateBudgetQuery);
@@ -92,10 +92,10 @@ public class DaoBudget extends AbstractSubject{
     @Override
     public void notifyObservers(int budget) {
 
-        System.out.println("subject invocato");
+
         for (AbstractObserver observer : observers) {
             observer.updateBudget(budget);
-            System.out.println("sono il subject");
+
         }
 
     }

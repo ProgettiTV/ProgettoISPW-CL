@@ -1,9 +1,8 @@
 package com.example.pcb;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+
 
 public class ModificaParametri {
     private int vecchioB;
@@ -19,23 +18,12 @@ public class ModificaParametri {
     private InserisciUtilizzoGUI inserisciUtilizzoGUI;
     private BeanModificaBudget beanModificaBudget;
 
-    private ModificaParametri modificaParametri;
+
     private BeanModificaUtilizzo beanModificaUtilizzo;
 
     private String idUtilizzo;
 
 
-
-    /*public void addObserver(BudgetObserver observer) {
-        observers.add(observer);
-    }
-
-    public void notifyObservers() {
-        int budget = Integer.parseInt(concreteSubjectBudget.returnNuovoB());
-        for (BudgetObserver observer : observers) {
-            observer.update(budget);
-        }
-    }*/
 
 
     public void prendiRiferimentoBean(BeanSelezionaBudget beanSelezionaBudget) throws SQLException {
@@ -48,15 +36,13 @@ public class ModificaParametri {
     public void setVecchioB() throws SQLException {
         this.vecchioB = beanSelezionaBudget.returnB();
         this.idVecchioB = beanSelezionaBudget.returnB();
-        //inserisciBudgetGUI.prendiRiferimentoCA();
+
         DaoBudget daoBudgetAdmin = DaoBudget.getInstance();
         daoBudgetAdmin.setValoreRicercaBudget(vecchioB);
         DaoBudget.getDaoBudgetConnection();
         daoBudgetAdmin.cercaBudget();
         this.vecchioB = daoBudgetAdmin.returnValoreBudgetDB();
-        System.out.println("valore vecchioB dopo db: "+vecchioB);
 
-        System.out.println("budget vecchio ricevuto a CA dopo db" +vecchioB);
         inviaBudgetVecchio();
     }
     public void inviaBudgetVecchio(){
@@ -108,7 +94,7 @@ public class ModificaParametri {
     public void setNuovoU() throws SQLException {
         this.nuovoU = beanModificaUtilizzo.returnPercentualiInserite();
         DaoUtilizzi daoUtilizziAdmin = new DaoUtilizzi();
-        System.out.println("modificaparametri nuovou = "+ nuovoU);
+
         daoUtilizziAdmin.setNomeRicercaUtilizzo(idUtilizzo);
         daoUtilizziAdmin.setStringaPercentualiUtilizzo(nuovoU);
         DaoUtilizzi.getDaoUtilizziConnection();

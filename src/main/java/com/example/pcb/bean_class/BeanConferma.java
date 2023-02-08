@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class BeanConferma {
 
-    public Boolean conferma;
+    private final Boolean conferma;
 
     public BeanConferma(String risposta){
         this.conferma= Objects.equals(risposta, "Conferma");
