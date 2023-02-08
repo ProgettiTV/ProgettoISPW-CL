@@ -1,5 +1,7 @@
 package com.example.pcb.dao_class;
 
+import com.example.pcb.exception.DaoException;
+
 import java.sql.*;
 
 public class DaoBudget {
@@ -28,7 +30,7 @@ public class DaoBudget {
 
 
     }
-    public void cercaValore() throws SQLException {
+    public void cercaValore() throws DaoException {
 
         Statement statement;
 
@@ -36,7 +38,7 @@ public class DaoBudget {
         try {
             statement = connection.createStatement();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DaoException(e.getMessage());
         }
 
 

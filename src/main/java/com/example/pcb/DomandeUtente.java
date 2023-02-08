@@ -7,6 +7,7 @@ import com.example.pcb.bean_class.BeanUtilizzo;
 import com.example.pcb.dao_class.DaoBudget;
 import com.example.pcb.dao_class.DaoUtilizzi;
 import com.example.pcb.design_pattern_decorator.RicercaComponenti;
+import com.example.pcb.exception.DaoException;
 import com.example.pcb.gui_class.ComponentiGUI;
 
 import java.sql.SQLException;
@@ -58,8 +59,8 @@ public  class DomandeUtente {
             }
             try {
                 daoBudget.cercaValore();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
+            } catch (DaoException e) {
+                System.out.println(e.getMessage());
             }
 
 

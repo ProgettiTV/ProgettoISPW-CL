@@ -16,7 +16,7 @@ import java.util.Objects;
 
 public class RispostaDomandaBudgetGUI {
 
-    public static DomandeUtente domandeUtente;
+    private static DomandeUtente domandeUtente;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -53,12 +53,10 @@ public class RispostaDomandaBudgetGUI {
 
 
     public void selezionaRisposteBudget(ActionEvent ae) throws IOException {
+
         String risposta = ((Button)ae.getSource()).getText();
-
-
         BeanBudget b = new BeanBudget(risposta);
         domandeUtente= new DomandeUtente();
-
         domandeUtente.prendB(b);
         switchToUtilizzo(ae);
     }
