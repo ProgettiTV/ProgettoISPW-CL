@@ -13,17 +13,17 @@
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0">
          <image>
-            <Image url="@GUIClass/6839531-grey-wallpaper.jpg" />
+            <Image url="@gui_class/6839531-grey-wallpaper.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="347.0" fitWidth="338.0" layoutX="526.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@GUIClass/9043073_rhombus_icon.png" />
+            <Image url="@gui_class/9043073_rhombus_icon.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="270.0" fitWidth="218.0" layoutX="586.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@GUIClass/309041_users_group_people_icon.png" />
+            <Image url="@gui_class/309041_users_group_people_icon.png" />
          </image>
       </ImageView>
       <Button layoutX="1051.0" layoutY="607.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="173.0" text="Accedi con Google" />
@@ -33,7 +33,7 @@
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@GUIClass/216437_back_arrow_icon.png" />
+                  <Image url="@gui_class/216437_back_arrow_icon.png" />
                </image>
             </ImageView>
          </graphic></Button>
@@ -44,7 +44,7 @@
       </Text>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="66.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@GUIClass/Logo.jpeg" />
+            <Image url="@gui_class/Logo.jpeg" />
          </image>
       </ImageView>
       <ImageView fitHeight="54.0" fitWidth="48.0" layoutX="549.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">

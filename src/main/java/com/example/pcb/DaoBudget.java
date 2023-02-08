@@ -88,10 +88,6 @@ public class DaoBudget extends AbstractSubject{
         observers.add(observer);
     }
 
-    @Override
-    public void removeObserver(AbstractObserver observer) {
-        observers.remove(observer);
-    }
 
     @Override
     public void notifyObservers(int budget) {

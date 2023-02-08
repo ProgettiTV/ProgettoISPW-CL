@@ -1,8 +1,8 @@
 package com.example.pcb;
 
 public class BeanMostraVecchioBudget {
-    private String vecchioB;
-    private int idVecchioB;
+    private final String vecchioB;
+    private final int idVecchioB;
 
     public BeanMostraVecchioBudget(int budget, int id){
         this.vecchioB= Integer.toString(budget);

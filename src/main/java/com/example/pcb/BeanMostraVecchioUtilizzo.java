@@ -1,7 +1,7 @@
 package com.example.pcb;
 
 public class BeanMostraVecchioUtilizzo {
-    private String vecchioU;
+    private final String vecchioU;
 
     public BeanMostraVecchioUtilizzo(String utilizzo){
         this.vecchioU= utilizzo;

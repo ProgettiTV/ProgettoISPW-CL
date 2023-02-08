@@ -70,7 +70,7 @@ public class AdminBudgetGUI {
         modificaParametri.prendiBeanRiferimentoInviaVecchio(inserisciBudgetGUI);
 
         inserisciBudgetGUI.prendiRiferimentoCAB(modificaParametri);
-        //modificaParametri.addObserver(budgetObserver);
+
         switchToInserisciBudget(event);
     }
 

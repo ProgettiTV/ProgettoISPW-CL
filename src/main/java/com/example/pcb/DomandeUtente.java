@@ -1,25 +1,25 @@
 package com.example.pcb;
 
-import com.example.pcb.BeanClass.BeanBudget;
-import com.example.pcb.BeanClass.BeanConferma;
-import com.example.pcb.BeanClass.BeanMostraResoconto;
-import com.example.pcb.BeanClass.BeanUtilizzo;
-import com.example.pcb.DaoClass.DaoBudget;
-import com.example.pcb.DaoClass.DaoUtilizzi;
-import com.example.pcb.GUIClass.ComponentiGUI;
+import com.example.pcb.bean_class.BeanBudget;
+import com.example.pcb.bean_class.BeanConferma;
+import com.example.pcb.bean_class.BeanMostraResoconto;
+import com.example.pcb.bean_class.BeanUtilizzo;
+import com.example.pcb.dao_class.DaoBudget;
+import com.example.pcb.dao_class.DaoUtilizzi;
+import com.example.pcb.design_pattern_decorator.RicercaComponenti;
+import com.example.pcb.gui_class.ComponentiGUI;
 
 import java.sql.SQLException;
 
 public  class DomandeUtente {
     private int budget;
     private String[] listaCaratteristicheUtilizzo= new String[9];
-    public BeanMostraResoconto mostraResoconto;
-    public ComponentiGUI usaComponentiGUI;
-    public CreaParametriDiRicerca creaParametriDiRicerca;
-    private Boolean confermatoRisposte;
-    public int budgetProvissorio;
-    public String utilizzoProvissorio;
-   // public ConfermaRisposteGUI confermaRisposteGUI;
+    private BeanMostraResoconto mostraResoconto;
+
+
+    private int budgetProvissorio;
+    private String utilizzoProvissorio;
+
 
 
     public DomandeUtente(){
@@ -28,15 +28,12 @@ public  class DomandeUtente {
 
     public void prendB(BeanBudget b){
 
-        //int budget1= b.returnID();
         this.budgetProvissorio =b.returnID();
-        //System.out.println("ricevo budget da CA  "+ budget1);
+
     }
     public void prendU(BeanUtilizzo u){
 
-        //String risposta= u.returnStr();
         this.utilizzoProvissorio =u.returnStr();
-        //System.out.println("ricevo Utilizzo da CA  "+ risposta);
 
     }
 
@@ -47,10 +44,10 @@ public  class DomandeUtente {
     }
 
     public void prendC(BeanConferma c) {
-        this.confermatoRisposte= c.returnBool();
-        //System.out.println("ricevo Conferma da CA  "+ confermatoRisposte);
+         Boolean confermatoRisposte= c.returnBool();
+
         if(confermatoRisposte){
-            //crea classe dao
+
 
             DaoBudget daoBudget=new DaoBudget(budgetProvissorio);
 
@@ -65,7 +62,7 @@ public  class DomandeUtente {
                 throw new RuntimeException(e);
             }
 
-            //ok
+
             DaoUtilizzi daoUtilizzi=new DaoUtilizzi(utilizzoProvissorio);
             try {
                 DaoUtilizzi.getDaoUtilizziConnection();
@@ -79,18 +76,12 @@ public  class DomandeUtente {
             }
 
 
-            //chiedi il return dei valori trovati e this. attributo
+
             this.budget=daoBudget.returnValoreBudget();
             this.listaCaratteristicheUtilizzo=daoUtilizzi.returnListaUtilizzo();
         }
-        //inviaRisposteUtente(budget,listaCaratteristicheUtilizzo);
 
-        //creaParametriDiRicerca.prendiCGComponenti(this.usaComponentiGUI);
 
-        //this.creaParametriDiRicerca=new CreaParametriDiRicerca();
-        System.out.println("ARRIVA USACOMPONENTIGUI IN DomandeUtente " + usaComponentiGUI);
-
-        //creaParametriDiRicerca.produciParametri( budget,listaCaratteristicheUtilizzo);
 
     }
 
@@ -105,12 +96,8 @@ public  class DomandeUtente {
 
 
     public void prendiCGComponenti(ComponentiGUI componentiGUI) {
-         //this.usaComponentiGUI=componentiGUI;
-        this.creaParametriDiRicerca=new CreaParametriDiRicerca();
-        creaParametriDiRicerca.inviaRiferimentoComponenti(componentiGUI);
-        creaParametriDiRicerca.produciParametri( budget,listaCaratteristicheUtilizzo);
-        System.out.println("ARRIVA USACOMPONENTIGUI IN DomandeUtente, prendiCGComponenti " + usaComponentiGUI);
 
-
+        RicercaComponenti ricercaComponenti=new RicercaComponenti(componentiGUI);
+        ricercaComponenti.creaParametriDiricerca(budget,listaCaratteristicheUtilizzo);
     }
 }

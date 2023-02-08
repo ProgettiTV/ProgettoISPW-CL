@@ -1,58 +1,27 @@
 package com.example.pcb;
 
-import com.example.pcb.DesignPatternDecorator.RicercaComponenti;
-import com.example.pcb.GUIClass.ComponentiGUI;
+
 
 public class CreaParametriDiRicerca {
-    public ComponentiGUI inviaRiferimentoComponenti;
-    private Integer[] listaComp=new Integer[9] ;
-
-    //ok
-
 
 
     public CreaParametriDiRicerca() {
 
     }
 
-    public void produciParametri(int budget, String[] listaCaratteristicheUtilizzo) {
-        int budgetDaDividere=budget;
-        String[] listaCaratteristiche=listaCaratteristicheUtilizzo;
-        int copertura=0;
-        int percentualeTOT=0;
+    public Integer[] produciParametri(int budget, String[] listaCaratteristicheUtilizzo) {
+        Integer[] listaComp=new Integer[9];
+
         for(int i=0;i<9;i++){
-            int percentuale = (Integer.parseInt(listaCaratteristiche[i]));
-            percentualeTOT=percentualeTOT+percentuale;
-            //double  percentuale1= percentuale / 100 ;
+
+            int percentuale = (Integer.parseInt(listaCaratteristicheUtilizzo[i]));
+
             float  percentuale1= (float) (percentuale * 0.01);
-            int risultato= (int) ((budgetDaDividere*percentuale1));
-            System.out.println("risultato percentuale "+ percentuale1);
+            int risultato= (int) ((budget*percentuale1));
 
-
-            System.out.println("risultato INTERO singolo "+ risultato);
             listaComp[i]=risultato;
-            copertura=copertura+ risultato;
-
-            System.out.println("risultato STRINGA  "+ listaComp[i]);
-
-
         }
-        System.out.println("risultato intero "+ copertura);
-        System.out.println("risultato TOT PERCENT "+ percentualeTOT);
-        generaRicercaComponenti(listaComp);
-        System.out.println("ARRIVA USACOMPONENTIGUI IN PRODUCI PARAMETRI "+ inviaRiferimentoComponenti);
+        return listaComp;
     }
-    public void generaRicercaComponenti(Integer[] listaComp){
-
-        RicercaComponenti ricercaComponenti=new RicercaComponenti(listaComp,inviaRiferimentoComponenti);
-        System.out.println("ARRIVA USACOMPONENTIGUI IN CREA PARAMETRI "+ inviaRiferimentoComponenti);
-        ricercaComponenti.creaConfigurazione();
-
-
-    }
-    public void inviaRiferimentoComponenti(ComponentiGUI componentiGUI){
-        this.inviaRiferimentoComponenti=componentiGUI;
-    }
-
 
 }

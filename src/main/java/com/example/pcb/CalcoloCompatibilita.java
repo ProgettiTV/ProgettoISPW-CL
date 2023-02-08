@@ -1,14 +1,14 @@
 package com.example.pcb;
 
 
+
 import java.util.List;
 
 public class CalcoloCompatibilita {
-    private List<String> listaCompatibilita;
+    private final List<String> listaCompatibilita;
     private int percentualeCompatibilita;
     public CalcoloCompatibilita(List<String> caratteristica) {
         this.listaCompatibilita=caratteristica;
-
     }
     public int CalcoloPercentualeCompatibilita(){
 

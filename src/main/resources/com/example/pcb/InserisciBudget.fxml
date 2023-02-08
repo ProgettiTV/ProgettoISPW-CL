@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0">
          <image>
-            <Image url="@GUIClass/6839531-grey-wallpaper.jpg" />
+            <Image url="@gui_class/6839531-grey-wallpaper.jpg" />
          </image>
       </ImageView>
       <Button fx:id="budgetButton5" layoutX="796.0" layoutY="465.0" mnemonicParsing="false" onAction="#modificaValoreBudget" prefHeight="77.0" prefWidth="206.0" text="Conferma">
@@ -29,7 +29,7 @@
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@GUIClass/216437_back_arrow_icon.png" />
+                  <Image url="@gui_class/216437_back_arrow_icon.png" />
                </image>
             </ImageView>
          </graphic>
@@ -41,14 +41,14 @@
       </Text>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="66.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@GUIClass/Logo.jpeg" />
+            <Image url="@gui_class/Logo.jpeg" />
          </image>
       </ImageView>
       <Button layoutX="1074.0" layoutY="540.0" mnemonicParsing="false" onAction="#switchToEntry" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-fill: transparent;" text="Button">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@GUIClass/1564506_close_exit_logout_power_icon.png" />
+                  <Image url="@gui_class/1564506_close_exit_logout_power_icon.png" />
                </image>
             </ImageView>
          </graphic>

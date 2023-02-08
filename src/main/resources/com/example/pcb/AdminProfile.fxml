@@ -11,17 +11,17 @@
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0">
          <image>
-            <Image url="@GUIClass/6839531-grey-wallpaper.jpg" />
+            <Image url="@gui_class/6839531-grey-wallpaper.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="414.0" fitWidth="554.0" layoutX="483.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@GUIClass/9043073_rhombus_icon.png" />
+            <Image url="@gui_class/9043073_rhombus_icon.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="270.0" fitWidth="218.0" layoutX="581.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@GUIClass/5340287_man_people_person_user_users_icon.png" />
+            <Image url="@gui_class/5340287_man_people_person_user_users_icon.png" />
          </image>
       </ImageView>
       <Button layoutX="608.0" layoutY="540.0" mnemonicParsing="false" onAction="#switchToModificaBudget" prefHeight="35.0" prefWidth="136.0" text="Modifica Budget" />
@@ -30,7 +30,7 @@
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@GUIClass/216437_back_arrow_icon.png" />
+                  <Image url="@gui_class/216437_back_arrow_icon.png" />
                </image>
             </ImageView>
          </graphic>
@@ -42,14 +42,14 @@
       </Text>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="66.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@GUIClass/Logo.jpeg" />
+            <Image url="@gui_class/Logo.jpeg" />
          </image>
       </ImageView>
       <Button layoutX="1046.0" layoutY="524.0" mnemonicParsing="false" onAction="#switchToAccedi" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-fill: transparent;" text="Button">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@GUIClass/1564506_close_exit_logout_power_icon.png" />
+                  <Image url="@gui_class/1564506_close_exit_logout_power_icon.png" />
                </image>
             </ImageView>
          </graphic>

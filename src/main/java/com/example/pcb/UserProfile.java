@@ -26,7 +26,7 @@ public class UserProfile {
     }
 
     public void switchToBudget(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("GUIClass/Budget.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/Budget.fxml")));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

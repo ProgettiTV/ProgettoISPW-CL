@@ -1,6 +1,6 @@
 package com.example.pcb;
 
-import com.example.pcb.DaoClass.DaoLoginConnection;
+import com.example.pcb.dao_class.DaoLoginConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -73,14 +73,16 @@ public class Login {
 
                 if(queryLoginResult.getInt(1)==1){
                     if(queryLoginResult.getString(2).equals("User")){
-
+                        System.out.println("Benvenuto USER");
                         switchToUserProfile(event);
                     }else if (queryLoginResult.getString(2).equals("Admin")) {
-
+                        System.out.println("Benvenuto ADMIN");
                         switchToAdminProfile(event);
                     }
 
 
+                }else{
+                    System.out.println("Errore login");
                 }
             }
 

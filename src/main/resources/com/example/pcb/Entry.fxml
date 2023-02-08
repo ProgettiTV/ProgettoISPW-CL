@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0">
          <image>
-            <Image url="@GUIClass/6839531-grey-wallpaper.jpg" />
+            <Image url="@gui_class/6839531-grey-wallpaper.jpg" />
          </image>
       </ImageView>
       <Button fx:id="btnAccedi" layoutX="293.0" layoutY="454.0" minHeight="30.0" minWidth="300.0" mnemonicParsing="false" onAction="#switchToAccedi" prefHeight="85.0" prefWidth="224.0" text="Accedi">
@@ -25,7 +25,7 @@
       </Button>
       <ImageView fitHeight="256.0" fitWidth="326.0" layoutX="538.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@GUIClass/Logo.jpeg" />
+            <Image url="@gui_class/Logo.jpeg" />
          </image>
       </ImageView>
    </children>

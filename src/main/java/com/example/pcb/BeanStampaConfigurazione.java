@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BeanStampaConfigurazione {
-    private List<String> stampaConfigurazioneFinale;
+    private final List<String> stampaConfigurazioneFinale;
     public BeanStampaConfigurazione(List<String> configurazioneFinale) {
         stampaConfigurazioneFinale=new ArrayList<>();
         for (String s : configurazioneFinale) {

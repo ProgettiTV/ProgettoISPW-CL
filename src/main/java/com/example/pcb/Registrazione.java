@@ -1,6 +1,6 @@
 package com.example.pcb;
 
-import com.example.pcb.DaoClass.DaoLoginConnection;
+import com.example.pcb.dao_class.DaoLoginConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
