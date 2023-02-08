@@ -1,21 +1,16 @@
 package com.example.pcb.dao_class;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+
 import java.util.Properties;
 
 
 public class DBConnection {
-    /*
-    private static final String databaseName = "parametridb";
-    private static final String databaseUser = "root";
-    private static final String databasePassword = "pierfrancesco";
-    private static final String url = "jdbc:mysql://localhost/"+ databaseName;
-    */
+
     private static Connection connection;
 
     private DBConnection(){

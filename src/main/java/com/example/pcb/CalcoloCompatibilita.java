@@ -29,7 +29,7 @@ public class CalcoloCompatibilita {
             }
 
         }
-        else if( cpu!=null && raffredamento!=null ){
+        if( cpu!=null && raffredamento!=null ){
 
 
              if ( (Integer.parseInt(raffredamento)-2 )<= (Integer.parseInt(cpu) ) && (Integer.parseInt(cpu) )<= (Integer.parseInt(raffredamento)+2) &&  !cpu.equals("null")  && raffredamento.equals("null") ) {
@@ -37,19 +37,19 @@ public class CalcoloCompatibilita {
              }
 
         }
-        else if (  Ssd!=null && Ram!=null){
+        if (  Ssd!=null && Ram!=null){
                 if( Integer.parseInt(Ssd)  > 10 * ( Integer.parseInt(Ram) ) ) {
                     percentualeCompatibilita += 20;
                 }
 
         }
-        else if (  Case !=null  && Alimentatore !=null ){
+        if (  Case !=null  && Alimentatore !=null ){
                 if(Case.equals(Alimentatore) ){
                     percentualeCompatibilita += 20;
                 }
 
         }
-        else if ( SchedaVideo!=null &&  Monitor!=null){
+        if ( SchedaVideo!=null &&  Monitor!=null){
 
                 if(SchedaVideo.equals(Monitor)) {
                     percentualeCompatibilita += 20;
