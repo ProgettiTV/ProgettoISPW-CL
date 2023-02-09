@@ -114,7 +114,6 @@ public class Login {
                 while (scannerDaFile.hasNextLine() && !((datiInseriti[0]).equals(datiPresenti[0]) && (datiInseriti[1]).equals(datiPresenti[1]))) {
 
                     datiPresenti[i % 3] = scannerDaFile.nextLine();
-                    System.out.println(datiPresenti[i % 3]);
 
                     i++;
 
