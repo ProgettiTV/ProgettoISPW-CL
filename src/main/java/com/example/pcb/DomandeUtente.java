@@ -20,7 +20,7 @@ public  class DomandeUtente {
     private int budget;
     private String[] listaCaratteristicheUtilizzo= new String[9];
     private BeanMostraResoconto mostraResoconto;
-    private Logger logger;
+
 
 
     private int budgetProvissorio;
