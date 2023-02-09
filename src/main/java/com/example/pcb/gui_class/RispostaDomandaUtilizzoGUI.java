@@ -15,13 +15,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class RispostaDomandaUtilizzoGUI {
+public class RispostaDomandaUtilizzoGUI extends SwitchClassGUI{
 
         private final DomandeUtente istanzaCA ;
 
         private Stage stage;
         private Scene scene;
-        private Parent root;
+
 
 
     public RispostaDomandaUtilizzoGUI(DomandeUtente riferimentoCapplicativo) {
@@ -29,24 +29,6 @@ public class RispostaDomandaUtilizzoGUI {
 
     }
 
-
-
-        public void switchToEntry(ActionEvent event) throws IOException {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        }
-
-        public void switchToBudget(ActionEvent event) throws IOException {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Budget.fxml")));
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-
-        }
 
         public void switchToConferma(ActionEvent event) throws IOException {
             FXMLLoader loader = new FXMLLoader();

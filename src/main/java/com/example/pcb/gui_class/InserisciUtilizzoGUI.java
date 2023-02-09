@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class InserisciUtilizzoGUI {
+public class InserisciUtilizzoGUI extends SwitchClassGUI{
 
     @FXML
     private TextField oldUtilizzo;
@@ -26,27 +26,9 @@ public class InserisciUtilizzoGUI {
     private BeanMostraVecchioUtilizzo riferimentoU;
     private String mostraVecchioU;
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
     private ModificaParametri modificaParametri;
 
-    public void switchToEntry(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
 
-    public void switchToModificaUtilizzo(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ModificaUtilizzo.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-    }
 
     public void prendiRiferimentoCAU(ModificaParametri modificaParametri){
         this.modificaParametri = modificaParametri;

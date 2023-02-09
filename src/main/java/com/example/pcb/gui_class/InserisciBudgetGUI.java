@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class InserisciBudgetGUI extends AbstractObserver {
+public class InserisciBudgetGUI extends AbstractObserver{
 
 
     private String mostraVecchioB;

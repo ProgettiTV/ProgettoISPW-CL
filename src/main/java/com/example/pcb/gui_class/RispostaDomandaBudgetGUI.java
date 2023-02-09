@@ -14,12 +14,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class RispostaDomandaBudgetGUI {
+public class RispostaDomandaBudgetGUI extends SwitchClassGUI{
 
     private static DomandeUtente domandeUtente;
     private Stage stage;
     private Scene scene;
-    private Parent root;
+
 
     public void switchToUtilizzo(ActionEvent event) throws IOException {
 
@@ -34,22 +34,6 @@ public class RispostaDomandaBudgetGUI {
     }
 
 
-    public void switchToUserProfile(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("UserProfile.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
-    public void switchToEntry(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
 
 
     public void selezionaRisposteBudget(ActionEvent ae) throws IOException {

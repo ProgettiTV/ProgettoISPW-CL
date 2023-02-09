@@ -14,33 +14,18 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class AdminUtilizziGUI {
+public class AdminUtilizziGUI extends SwitchClassGUI{
 
     private final InserisciUtilizzoGUI inserisciUtilizzoGUI;
     private Stage stage;
     private Scene scene;
-    private Parent root;
+
 
     public AdminUtilizziGUI(){
+        super();
         this.inserisciUtilizzoGUI =new InserisciUtilizzoGUI();
     }
 
-    public void switchToEntry(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void switchToAdminProfile(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AdminProfile.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-    }
 
     public void switchToInserisciUtilizzo(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();

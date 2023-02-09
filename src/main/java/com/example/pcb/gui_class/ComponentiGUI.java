@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-public class ComponentiGUI {
+public class ComponentiGUI extends SwitchClassGUI{
 
     @FXML
     private TextField compatibilita;
@@ -40,27 +40,9 @@ public class ComponentiGUI {
 
     private List<String> stampaConfigurazione;
     private String percentualeCompatibilita;
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
 
 
-    public void switchToEntry(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
 
-    public void switchToBudget(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Budget.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-    }
 
     public void prendiBeanStampaConfigurazione(BeanStampaConfigurazione beanStampaConfigurazione) {
         this.stampaConfigurazione = beanStampaConfigurazione.returnStampaConfigurazione();

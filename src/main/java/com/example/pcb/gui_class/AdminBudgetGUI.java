@@ -15,34 +15,21 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class AdminBudgetGUI {
+public class AdminBudgetGUI extends SwitchClassGUI{
 
-    private Stage stage;
+   private Stage stage;
     private Scene scene;
     private Parent root;
     private final InserisciBudgetGUI inserisciBudgetGUI;
+    private SwitchClassGUI switchClassGUI;
 
 
     public AdminBudgetGUI(){
+        super();
         this.inserisciBudgetGUI =new InserisciBudgetGUI();
     }
 
-    public void switchToEntry(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
 
-    public void switchToAdminProfile(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AdminProfile.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-    }
 
     public void switchToInserisciBudget(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();

@@ -20,14 +20,14 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class ConfermaRisposteGUI {
+public class ConfermaRisposteGUI extends SwitchClassGUI{
 
     private DomandeUtente riferimentoCapplicativo;
     private ComponentiGUI componentiGUI;
     private BeanMostraResoconto mostraResoconto;
     private Stage stage;
     private Scene scene;
-    private Parent root;
+
 
     @FXML
     private TextField budgetTextField;
@@ -58,31 +58,7 @@ public class ConfermaRisposteGUI {
 
     }
 
-    public void switchToUserProfile(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("UserProfile.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
 
-    }
-
-    public void switchToEntry(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void switchToBudget(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Budget.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-    }
 
     public void vaiAComponenti(ActionEvent ae) throws IOException /*throws IOException, SQLException*/ {
 
