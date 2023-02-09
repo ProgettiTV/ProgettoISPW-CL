@@ -27,16 +27,16 @@ public class SchedaVideo extends Decorator{
         caratteristica.add(risultatoCaratteristica);
     }
 
-    public void cercaSchedaVideo(){
+    public void cercaSchedaVideo() throws IOException, SQLException {
         DaoRicercaSchedaVideo daoRicercaSchedaVideo= new DaoRicercaSchedaVideo(this.budgetPerSchedaVideo);
 
 
         try {
             daoRicercaSchedaVideo.cercaValore();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IOException(e);
         }
         this.risultatoRicerca= daoRicercaSchedaVideo.returnComponenteSchedaVideo();
         this.risultatoCaratteristica=daoRicercaSchedaVideo.returnCaratteristicaSchedaVideo();

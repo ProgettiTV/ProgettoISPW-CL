@@ -27,14 +27,14 @@ public class Alimentatore extends  Decorator{
         caratteristica.add(risultatoCaratteristica);
     }
 
-    public void cercaAlimentatore(){
+    public void cercaAlimentatore() throws SQLException, IOException {
         DaoRicercaAlimentatore daoRicercaAlimentatore= new DaoRicercaAlimentatore(this.budgetPerAlimentatore);
         try {
             daoRicercaAlimentatore.cercaValore();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IOException(e);
         }
         this.risultatoRicerca= daoRicercaAlimentatore.returnComponenteAlimentatore();
         this.risultatoCaratteristica=daoRicercaAlimentatore.returnCaratteristicaAlimentatore();

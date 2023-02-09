@@ -27,16 +27,16 @@ public class RaffredamentoAcqua extends  Decorator{
         caratteristica.add(risultatoCaratteristica);
     }
 
-    public void cercaRaffredamentoAcqua(){
+    public void cercaRaffredamentoAcqua() throws IOException, SQLException {
         DaoRicercaRaffredamentoAcqua daoRicercaRaffredamentoAcqua = new DaoRicercaRaffredamentoAcqua(this.budgetPerRaffredamentoAcqua);
 
 
         try {
             daoRicercaRaffredamentoAcqua.cercaValore();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IOException(e);
         }
         this.risultatoRicerca= daoRicercaRaffredamentoAcqua.returnComponenteRaffredamentoAcqua();
         this.risultatoCaratteristica= daoRicercaRaffredamentoAcqua.returnCaratteristicaRaffredamentoAcqua();

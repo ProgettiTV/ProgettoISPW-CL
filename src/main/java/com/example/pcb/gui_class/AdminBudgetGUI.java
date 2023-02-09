@@ -19,9 +19,9 @@ public class AdminBudgetGUI extends SwitchClassGUI{
 
    private Stage stage;
     private Scene scene;
-    private Parent root;
+
     private final InserisciBudgetGUI inserisciBudgetGUI;
-    private SwitchClassGUI switchClassGUI;
+
 
 
     public AdminBudgetGUI(){

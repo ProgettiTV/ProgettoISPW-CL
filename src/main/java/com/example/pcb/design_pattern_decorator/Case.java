@@ -27,16 +27,16 @@ public class Case extends Decorator{
         caratteristica.add(risultatoCaratteristica);
     }
 
-    public void cercaCase(){
+    public void cercaCase() throws SQLException, IOException {
         DaoRicercaCase daoRicercaCase= new DaoRicercaCase(this.budgetPerCase);
 
 
         try {
             daoRicercaCase.cercaValore();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IOException(e);
         }
         this.risultatoRicerca= daoRicercaCase.returnComponenteCase();
         this.risultatoCaratteristica=daoRicercaCase.returnCaratteristiCase();

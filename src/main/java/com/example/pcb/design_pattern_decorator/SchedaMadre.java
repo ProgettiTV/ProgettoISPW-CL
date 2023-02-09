@@ -26,16 +26,16 @@ public class SchedaMadre extends Decorator{
         caratteristica.add(risultatoCaratteristica);
     }
 
-    public void cercaSchedaMadre (){
+    public void cercaSchedaMadre () throws IOException, SQLException {
         DaoRicercaSchedaMadre daoRicercaSchedaMadre= new DaoRicercaSchedaMadre(this.budgetPerSchedaMadre);
 
 
         try {
             daoRicercaSchedaMadre.cercaValore();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IOException(e);
         }
         this.risultatoRicerca= daoRicercaSchedaMadre.returnComponenteSchedaMadre();
         this.risultatoCaratteristica=daoRicercaSchedaMadre.returnCaratteristicaSchedaMadre();

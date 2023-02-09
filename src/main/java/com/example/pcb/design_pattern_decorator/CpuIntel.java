@@ -28,16 +28,16 @@ public class CpuIntel extends Decorator{
         caratteristica.add(risultatoCaratteristica);
     }
 
-    public void cercaCpuIntel(){
+    public void cercaCpuIntel() throws IOException, SQLException {
 
         DaoRicercaCpuIntel daoRicercaCpu= new DaoRicercaCpuIntel(this.budgetPerCpu);
 
         try {
             daoRicercaCpu.cercaValore();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        }  catch (SQLException e) {
+            throw new SQLException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IOException(e);
         }
         this.risultatoRicerca= daoRicercaCpu.returnComponenteCpuIntel();
         this.risultatoCaratteristica=daoRicercaCpu.returnCaratteristicaCpuIntel();

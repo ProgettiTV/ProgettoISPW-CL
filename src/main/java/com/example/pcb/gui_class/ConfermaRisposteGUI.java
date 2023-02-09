@@ -60,8 +60,8 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
 
 
 
-    public void vaiAComponenti(ActionEvent ae) throws IOException /*throws IOException, SQLException*/ {
-
+    public void vaiAComponenti(ActionEvent ae) throws IOException  {
+        String errore="mostra errore a utente";
 
         String risposta = ((Button)ae.getSource()).getText();
 
@@ -75,30 +75,42 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
                     riferimentoCapplicativo.prendC(beanConferma);
                 } catch (IOException e) {
                     Alert alert = new Alert(Alert.AlertType.NONE);
-                    alert.setTitle("mostro errore a utente");
+                    alert.setTitle(errore);
                     alert.setContentText("errore IO");
                     alert.show();
                 } catch (SQLException e) {
                     Alert alert = new Alert(Alert.AlertType.NONE);
-                    alert.setTitle("mostro errore a utente");
+                    alert.setTitle(errore);
                     alert.setContentText("errore SQL");
                     alert.show();
                 } catch (QueryException e) {
                     Alert alert = new Alert(Alert.AlertType.NONE);
-                    alert.setTitle("mostro errore a utente");
+                    alert.setTitle(errore);
                     alert.setContentText("errore Query");
                     alert.show();
                 }
             } catch (DaoException e) {
                 Alert alert = new Alert(Alert.AlertType.NONE);
-                alert.setTitle("mostro errore a utente");
+                alert.setTitle(errore);
                 alert.setContentText("dao errore");
                 alert.show();
             }
 
             this.componentiGUI=new ComponentiGUI();
 
-            riferimentoCapplicativo.prendiCGComponenti(componentiGUI);
+            try {
+                riferimentoCapplicativo.prendiCGComponenti(componentiGUI);
+            } catch (IOException e) {
+                Alert alert = new Alert(Alert.AlertType.NONE);
+                alert.setTitle(errore);
+                alert.setContentText("IO errore");
+                alert.show();
+            } catch (SQLException e) {
+                Alert alert = new Alert(Alert.AlertType.NONE);
+                alert.setTitle(errore);
+                alert.setContentText("SQL errore");
+                alert.show();
+            }
 
             switchToComponenti(ae);
         }

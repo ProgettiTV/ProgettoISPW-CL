@@ -28,16 +28,16 @@ public class Monitor extends Decorator{
         caratteristica.add(risultatoCaratteristica);
     }
 
-    public void cercaMonitor(){
+    public void cercaMonitor() throws SQLException, IOException {
         DaoRicercaMonitor daoRicercaMonitor= new DaoRicercaMonitor(this.budgetPerMonitor);
 
 
         try {
             daoRicercaMonitor.cercaValore();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IOException(e);
         }
         this.risultatoRicerca= daoRicercaMonitor.returnComponenteMonitor();
         this.risultatoCaratteristica=daoRicercaMonitor.returnCaratteristicaMonitor();

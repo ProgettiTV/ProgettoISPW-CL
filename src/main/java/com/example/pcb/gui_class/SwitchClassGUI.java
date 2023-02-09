@@ -16,7 +16,6 @@ public class SwitchClassGUI {
     private Scene scene;
     private Parent root;
 
-    private ComponentiGUI componentiGUI;
 
 
 
@@ -37,14 +36,7 @@ public class SwitchClassGUI {
         stage.show();
 
     }
-    public void switchToRegistrati(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Registrazione.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
 
-    }
 
 
     public void switchToModificaBudget(ActionEvent event) throws IOException {

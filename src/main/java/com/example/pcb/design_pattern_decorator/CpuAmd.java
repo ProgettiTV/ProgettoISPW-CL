@@ -30,16 +30,16 @@ public class CpuAmd extends Decorator{
         caratteristica.add(risultatoCaratteristica);
     }
 
-    public void cercaCpuAmd(){
+    public void cercaCpuAmd() throws IOException, SQLException {
 
         DaoRicercaCpuAmd daoRicercaCpu = new DaoRicercaCpuAmd(this.budgetPerCpu);
 
         try {
             daoRicercaCpu.cercaValore();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IOException(e);
         }
         this.risultatoRicerca= daoRicercaCpu.returnComponenteCpuAmd();
         this.risultatoCaratteristica=daoRicercaCpu.returnCaratteristicaCpuAmd();

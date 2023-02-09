@@ -6,6 +6,8 @@ import com.example.pcb.CalcoloCompatibilita;
 import com.example.pcb.CreaParametriDiRicerca;
 import com.example.pcb.gui_class.ComponentiGUI;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class RicercaComponenti {
 
         this.inviaComponentiGUI=usaComponentiGUI;
     }
-    public void creaParametriDiricerca(int budget,String[] listaCaratteristicheUtilizzo){
+    public void creaParametriDiricerca(int budget,String[] listaCaratteristicheUtilizzo) throws IOException, SQLException {
         CreaParametriDiRicerca creazioneParametriDiRicerca=new CreaParametriDiRicerca();
         this.listaBudget= creazioneParametriDiRicerca.produciParametri(budget,listaCaratteristicheUtilizzo);
         this.component = new PcVuotoConcreteComponent();
@@ -28,7 +30,7 @@ public class RicercaComponenti {
         this.caratteristica = new ArrayList<>();
         creaConfigurazione();
     }
-    public void creaConfigurazione(){
+    public void creaConfigurazione() throws IOException, SQLException {
 
         double randomCpu =  Math.random()*10;
 
@@ -45,18 +47,36 @@ public class RicercaComponenti {
         Ram ram=new Ram( this.component, listaBudget[1]);
         this.component = ram;
         ram.cercaRam();
+        try {
+            ram.cercaRam();
+        } catch (SQLException e) {
+            throw new SQLException(e);
+        }
 
         SchedaVideo schedaVideo=new SchedaVideo( this.component, listaBudget[2]);
         this.component = schedaVideo;
-        schedaVideo.cercaSchedaVideo();
+        try {
+            schedaVideo.cercaSchedaVideo();
+        } catch (SQLException e) {
+            throw new SQLException(e);
+        }
 
         Ssd ssd=new Ssd( this.component, listaBudget[3]);
         this.component =  ssd;
-        ssd.cercaSsd();
+        try {
+            ssd.cercaSsd();
+        } catch (IOException e) {
+            throw new IOException(e);
+        }
 
         Monitor monitor=new Monitor( this.component, listaBudget[4]);
         this.component =  monitor;
-        monitor.cercaMonitor();
+
+        try {
+            monitor.cercaMonitor();
+        } catch (SQLException e) {
+            throw new SQLException(e);
+        }
 
 
         double randomRaffredamento = (Math.random() *20) ;
@@ -64,25 +84,47 @@ public class RicercaComponenti {
         if(randomRaffredamento%2==0){
             RaffredamentoAcqua raffredamentoAcqua=new RaffredamentoAcqua( this.component, listaBudget[5]);
             this.component =  raffredamentoAcqua;
-            raffredamentoAcqua.cercaRaffredamentoAcqua();
+            try {
+                raffredamentoAcqua.cercaRaffredamentoAcqua();
+            } catch (SQLException e) {
+                throw new SQLException(e);
+            }
         }else{
             RaffredamentoAria raffredamentoAria=new RaffredamentoAria( this.component, listaBudget[5]);
             this.component =  raffredamentoAria;
-            raffredamentoAria.cercaRaffredamentoAria();
+            try {
+                raffredamentoAria.cercaRaffredamentoAria();
+            } catch (SQLException e) {
+                throw new SQLException(e);
+            }
+
         }
 
 
         Case caseComponent=new Case( this.component, listaBudget[6]);
         this.component =  caseComponent;
-        caseComponent.cercaCase();
+        try {
+            caseComponent.cercaCase();
+        } catch (SQLException e) {
+            throw new SQLException(e);
+        }
 
         SchedaMadre schedaMadre=new SchedaMadre( this.component, listaBudget[7]);
         this.component = schedaMadre;
-        schedaMadre.cercaSchedaMadre();
+        try {
+            schedaMadre.cercaSchedaMadre();
+        } catch (SQLException e) {
+            throw new SQLException(e);
+        }
+
 
         Alimentatore alimentatore=new Alimentatore( this.component, listaBudget[8]);
         this.component =  alimentatore;
-        alimentatore.cercaAlimentatore();
+        try {
+            alimentatore.cercaAlimentatore();
+        } catch (SQLException e) {
+            throw new SQLException(e);
+        }
 
 
         this.component.getConfigurazione(configurazioneFinale);

@@ -30,7 +30,7 @@ public class Ram extends Decorator{
         caratteristica.add(risultatoCaratteristica);
     }
 
-    public void cercaRam(){
+    public void cercaRam() throws SQLException, IOException {
 
         DaoRicercaRam daoRicercaRam= new DaoRicercaRam(this.budgetPerRam);
 
@@ -39,9 +39,9 @@ public class Ram extends Decorator{
         try {
             daoRicercaRam.cercaValore();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IOException(e);
         }
         this.risultatoRicerca= daoRicercaRam.returnComponenteRam();
         this.risultatoCaratteristica=daoRicercaRam.returnCaratteristicaRam();

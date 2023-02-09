@@ -66,7 +66,7 @@ public  class DomandeUtente {
             } catch (DaoException e) {
                 throw new DaoException("Errore DAO");
             }catch (SQLException e){
-                throw new QueryException("Errore DAO");
+                throw new QueryException("Errore SQL");
             }
 
 
@@ -102,7 +102,7 @@ public  class DomandeUtente {
     }
 
 
-    public void prendiCGComponenti(ComponentiGUI componentiGUI) {
+    public void prendiCGComponenti(ComponentiGUI componentiGUI) throws IOException, SQLException {
 
         RicercaComponenti ricercaComponenti=new RicercaComponenti(componentiGUI);
         ricercaComponenti.creaParametriDiricerca(budget,listaCaratteristicheUtilizzo);
