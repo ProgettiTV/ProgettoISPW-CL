@@ -4,12 +4,14 @@ import com.example.pcb.bean_class.BeanConferma;
 import com.example.pcb.bean_class.BeanMostraResoconto;
 import com.example.pcb.DomandeUtente;
 import com.example.pcb.exception.DaoException;
+import com.example.pcb.exception.QueryException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -82,18 +84,42 @@ public class ConfermaRisposteGUI {
 
     }
 
-    public void vaiAComponenti(ActionEvent ae) throws IOException, DaoException, SQLException {
+    public void vaiAComponenti(ActionEvent ae) throws IOException /*throws IOException, SQLException*/ {
 
 
         String risposta = ((Button)ae.getSource()).getText();
 
         BeanConferma beanConferma = new BeanConferma(risposta);
 
-
+        Alert alert1 = new Alert(Alert.AlertType.NONE);
+        alert1.setTitle("mostro errore a utente");
+        alert1.setContentText("errore IO");
+        alert1.show();
 
         if (Objects.equals(risposta, "Conferma")){
 
-            riferimentoCapplicativo.prendC(beanConferma);
+            try {
+                try {
+                    riferimentoCapplicativo.prendC(beanConferma);
+                } catch (IOException e) {
+                    Alert alert = new Alert(Alert.AlertType.NONE);
+                    alert.setTitle("mostro errore a utente");
+                    alert.setContentText("errore IO");
+                    alert.show();
+                } catch (SQLException e) {
+                    Alert alert = new Alert(Alert.AlertType.NONE);
+                    alert.setTitle("mostro errore a utente");
+                    alert.setContentText("errore SQL");
+                    alert.show();
+                } catch (QueryException e) {
+                    throw new RuntimeException(e);
+                }
+            } catch (DaoException e) {
+                Alert alert = new Alert(Alert.AlertType.NONE);
+                alert.setTitle("mostro errore a utente");
+                alert.setContentText("dao errore");
+                alert.show();
+            }
 
             this.componentiGUI=new ComponentiGUI();
 

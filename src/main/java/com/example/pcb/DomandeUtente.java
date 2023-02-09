@@ -8,12 +8,12 @@ import com.example.pcb.dao_class.DaoBudget;
 import com.example.pcb.dao_class.DaoUtilizzi;
 import com.example.pcb.design_pattern_decorator.RicercaComponenti;
 import com.example.pcb.exception.DaoException;
+import com.example.pcb.exception.QueryException;
 import com.example.pcb.gui_class.ComponentiGUI;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public  class DomandeUtente {
@@ -49,7 +49,7 @@ public  class DomandeUtente {
         invioResoconto();
     }
 
-    public void prendC(BeanConferma c) throws IOException, DaoException, SQLException {
+    public void prendC(BeanConferma c) throws DaoException, QueryException, IOException, SQLException {
          Boolean confermatoRisposte= c.returnBool();
 
         if(Boolean.TRUE.equals(confermatoRisposte)){
@@ -63,14 +63,17 @@ public  class DomandeUtente {
             try {
 
                 daoBudget.cercaValore();
-            } catch (DaoException | SQLException e) {
-                logger.log(Level.WARNING, e.getMessage());
+            } catch (DaoException e) {
+                //logger.log(Level.WARNING, e.getMessage());
+                throw new DaoException("Errore DAO");
+            }catch (SQLException e){
+                throw new QueryException("Errore DAO");
             }
 
 
             DaoUtilizzi daoUtilizzi=new DaoUtilizzi();
             daoUtilizzi.setRicercaUtilizzo(utilizzoProvissorio);
-            daoUtilizzi.getDaoUtilizziConnection();
+            DaoUtilizzi.getDaoUtilizziConnection();
 
 
 

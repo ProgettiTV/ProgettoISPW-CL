@@ -11,12 +11,13 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Objects;
-
+import java.util.Scanner;
 
 
 public class Login {
@@ -59,33 +60,78 @@ public class Login {
 
     public void validateLogin(ActionEvent event) throws IOException {
 
-        Connection myConnection = DBConnection.getDBConnection();
+        String usernameInserito = usernameTextField.getText();
+        String passwordInserita = passwordPasswordField.getText();
+
+        double randomAccess = Math.random()*20;
+        if (randomAccess%2==0) {
+            Connection myConnection = DBConnection.getDBConnection();
 
 
-        String verifyLoginQuery = "SELECT count(1), Role FROM useraccounts WHERE username = '" + usernameTextField.getText() + "' AND password = '" + passwordPasswordField.getText() + "'" +" GROUP BY Role";
+            String verifyLoginQuery = "SELECT count(1), Role FROM useraccounts WHERE username = '" + usernameInserito + "' AND password = '" + passwordInserita + "'" + " GROUP BY Role";
 
-        try{
+            try {
 
-            Statement statement = myConnection.createStatement();
-            ResultSet queryLoginResult = statement.executeQuery(verifyLoginQuery);
+                Statement statement = myConnection.createStatement();
+                ResultSet queryLoginResult = statement.executeQuery(verifyLoginQuery);
 
-            while(queryLoginResult.next()){
+                while (queryLoginResult.next()) {
 
-                if(queryLoginResult.getInt(1)==1){
-                    if(queryLoginResult.getString(2).equals("User")){
-                        switchToUserProfile(event);
-                    }else if (queryLoginResult.getString(2).equals("Admin")) {
-                        switchToAdminProfile(event);
+                    if (queryLoginResult.getInt(1) == 1) {
+                        if (queryLoginResult.getString(2).equals("User")) {
+                            switchToUserProfile(event);
+                        } else if (queryLoginResult.getString(2).equals("Admin")) {
+                            switchToAdminProfile(event);
+                        }
+
+
                     }
-
-
                 }
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
-        }catch(Exception e){
-            e.printStackTrace();
+
+        }else{
+
+            String[] datiInseriti = new String[2];
+            datiInseriti[0] = usernameInserito;
+            datiInseriti[1] = passwordInserita;
+            String[] datiPresenti = new String[3];
+            String pathFileName = "C:\\init.txt";
+            File inputFile = new File(pathFileName);
+            Scanner scannerDaFile;
+            try {
+                scannerDaFile = new Scanner(inputFile);
+
+                int i = 0;
+
+                while (scannerDaFile.hasNextLine() && !((datiInseriti[0]).equals(datiPresenti[0]) && (datiInseriti[1]).equals(datiPresenti[1]))) {
+                    if (i == 3) {
+                     i = 0;
+
+                    }
+                    datiPresenti[i] = scannerDaFile.nextLine();
+                    System.out.println(datiPresenti[i]);
+                    i++;
+                }
+                System.out.println(" Stop leggere ");
+                System.out.println(usernameInserito);
+                System.out.println(passwordInserita);
+
+
+                if ( Objects.equals(scannerDaFile.nextLine(), "User")) {
+                    switchToUserProfile(event);
+                    System.out.println(" OKAY2");
+                } else {
+                    switchToAdminProfile(event);
+                }
+            }catch( IOException e){
+
+            }
+
         }
+
     }
-
-
 }
