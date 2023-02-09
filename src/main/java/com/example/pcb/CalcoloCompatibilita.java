@@ -23,39 +23,31 @@ public class CalcoloCompatibilita {
 
 
 
-        if(cpu!=null  && schedaMadre!=null){
-            if(((Integer.parseInt(schedaMadre)-2 )<= (Integer.parseInt(cpu) ) ) && ( (Integer.parseInt(cpu) )<= (Integer.parseInt(schedaMadre)+2)) ) {
+        if((cpu!=null  && schedaMadre!=null) && ((Integer.parseInt(schedaMadre)-2 )<= (Integer.parseInt(cpu) ) ) && ( (Integer.parseInt(cpu) )<= (Integer.parseInt(schedaMadre)+2)))
+
                 percentualeCompatibilita += 20;
-            }
-
-        }
-        if( cpu!=null && raffredamento!=null){
 
 
-             if ( (Integer.parseInt(raffredamento)-2 )<= (Integer.parseInt(cpu) ) && (Integer.parseInt(cpu) )<= (Integer.parseInt(raffredamento)+2) &&  !cpu.equals("null")  && raffredamento.equals("null") ) {
+        if((cpu!=null && raffredamento!=null) && ((Integer.parseInt(raffredamento)-2 )<= (Integer.parseInt(cpu) )) && ((Integer.parseInt(cpu) )<= (Integer.parseInt(raffredamento)+2)))
+
                  percentualeCompatibilita += 20;
-             }
 
-        }
-        if (ssd!=null && ram!=null){
-                if( Integer.parseInt(ssd)  > 10 * ( Integer.parseInt(ram) ) ) {
+
+        if ((ssd!=null && ram!=null) && (Integer.parseInt(ssd)  > 10 * ( Integer.parseInt(ram) )))
+
                     percentualeCompatibilita += 20;
-                }
 
-        }
-        if (caseBox !=null  && alimentatore !=null){
-                if(caseBox.equals(alimentatore) ){
+
+        if ((caseBox !=null  && alimentatore !=null) && caseBox.equals(alimentatore))
+
                     percentualeCompatibilita += 20;
-                }
 
-        }
-        if (schedaVideo!=null &&  monitor!=null){
 
-                if(schedaVideo.equals(monitor)) {
+        if ((schedaVideo!=null &&  monitor!=null) && schedaVideo.equals(monitor))
+
                     percentualeCompatibilita += 20;
-                }
 
-        }
+
 
         return  percentualeCompatibilita;
     }
