@@ -46,7 +46,7 @@ public class DaoUtilizzi {
         return connection;
 
     }
-    public  void cercaCaratteristiche() throws SQLException, IOException {
+    public  void cercaCaratteristiche() throws SQLException {
 
         Statement statement = connection.createStatement();
 
@@ -65,7 +65,7 @@ public class DaoUtilizzi {
             }
             this.risultatoUtilizzo=result;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
 

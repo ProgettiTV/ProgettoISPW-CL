@@ -79,7 +79,7 @@ public  class DomandeUtente {
             try {
                 daoUtilizzi.cercaCaratteristiche();
             } catch (SQLException | IOException e) {
-                throw new RuntimeException(e);
+                throw new SQLException(e);
             }
 
 

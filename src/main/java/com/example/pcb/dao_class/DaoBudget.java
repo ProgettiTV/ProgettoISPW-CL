@@ -68,11 +68,7 @@ public class DaoBudget extends AbstractSubject {
 
         String ricercaValoreBudget="SELECT valore FROM parametri_budget WHERE idparametri_budget=" + ricercavalore ;
         Statement statement;
-        try {
-            statement = connection.createStatement();
-        } catch (SQLException e) {
-            throw new DaoException(e.getMessage());
-        }
+        statement = connection.createStatement();
         String result = "";
         try {
 
@@ -83,7 +79,7 @@ public class DaoBudget extends AbstractSubject {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
         this.risultatoBudget= Integer.parseInt(result);
