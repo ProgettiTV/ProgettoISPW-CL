@@ -100,33 +100,22 @@ public class ModificaParametri {
         DaoUtilizzi.getDaoUtilizziConnection();
         daoUtilizziAdmin.aggiornaUtilizzo();
         
-        inviaUtilizzoPerModifica(daoUtilizziAdmin);
+
 
     }
 
-    private void inviaUtilizzoPerModifica(DaoUtilizzi daoUtilizziAdmin) {
-        //this.concreteSubjectUtilizzo = new ConcreteSubjectUtilizzo(nuovoU);
-    }
 
     public void setNuovoB() throws SQLException {
         this.nuovoB = beanModificaBudget.returnBudgetInserito();
         DaoBudget daoBudgetAdmin = DaoBudget.getInstance();
-        System.out.println("modificaparametri idvecchiob = "+ idVecchioB);
+
         daoBudgetAdmin.setValoreRicercaBudget(idVecchioB);
         daoBudgetAdmin.setNuovoValoreBudget(nuovoB);
         DaoBudget.getDaoBudgetConnection();
         daoBudgetAdmin.aggiornaBudget();
 
-        //this.concreteSubjectBudget = new ConcreteSubjectBudget(nuovoB);
-        //notifyObservers(Integer.parseInt(nuovoB));
 
-        inviaBudgetPerModifica(daoBudgetAdmin);
     }
-    public void inviaBudgetPerModifica(DaoBudget daoBudgetAdmin){
-        //this.concreteSubjectBudget = new ConcreteSubjectBudget(nuovoB);
-        //daoBudgetAdmin.setNuovoValoreBudget();
-    }
-
 
 
 }

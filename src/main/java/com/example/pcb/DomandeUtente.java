@@ -13,10 +13,14 @@ import com.example.pcb.gui_class.ComponentiGUI;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public  class DomandeUtente {
     private int budget;
     private String[] listaCaratteristicheUtilizzo= new String[9];
     private BeanMostraResoconto mostraResoconto;
+    private Logger logger;
 
 
     private int budgetProvissorio;
@@ -48,7 +52,7 @@ public  class DomandeUtente {
     public void prendC(BeanConferma c) {
          Boolean confermatoRisposte= c.returnBool();
 
-        if(confermatoRisposte){
+        if(Boolean.TRUE.equals(confermatoRisposte)){
 
 
             DaoBudget daoBudget=new DaoBudget(budgetProvissorio);
@@ -57,7 +61,7 @@ public  class DomandeUtente {
             try {
                 daoBudget.cercaValore();
             } catch (DaoException e) {
-                System.out.println(e.getMessage());
+                logger.log(Level.WARNING, e.getMessage());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

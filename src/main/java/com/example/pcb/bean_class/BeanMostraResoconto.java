@@ -4,7 +4,7 @@ public class BeanMostraResoconto {
     private String mostraB;
     private String mostraU;
     public BeanMostraResoconto() {
-
+        //costruttore
     }
 
     public void getmostraB(int b1){

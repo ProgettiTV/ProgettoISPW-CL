@@ -19,7 +19,7 @@ public class DBConnectionAmazon {
 
         try{
             Properties prop = new Properties();
-            prop.load(new FileInputStream("C:\\Users\\pf23l\\OneDrive\\Desktop\\ISPW TOTAL\\ProgettoISPW\\src\\main\\java\\com\\example\\pcb\\design_pattern_decorator\\dao_class_concrete_decorator\\credenzialiAmazonDB"));
+            prop.load(new FileInputStream("C:\\Users\\justo\\Desktop\\Progetto\\src\\main\\java\\com\\example\\pcb\\design_pattern_decorator\\dao_class_concrete_decorator\\credenzialiAmazonDB"));
             String databaseProprietario = prop.getProperty("databaseUser");
             String databaseAmazonPassword = prop.getProperty("databasePassword");
             String urlDbAmazon = prop.getProperty("url");

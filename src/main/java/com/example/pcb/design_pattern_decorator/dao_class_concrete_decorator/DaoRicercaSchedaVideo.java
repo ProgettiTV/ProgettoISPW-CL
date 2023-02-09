@@ -1,7 +1,5 @@
 package com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator;
 
-import com.example.pcb.dao_class.DBConnection;
-
 import java.io.IOException;
 import java.sql.*;
 

@@ -73,16 +73,12 @@ public class Login {
 
                 if(queryLoginResult.getInt(1)==1){
                     if(queryLoginResult.getString(2).equals("User")){
-                        System.out.println("Benvenuto USER");
                         switchToUserProfile(event);
                     }else if (queryLoginResult.getString(2).equals("Admin")) {
-                        System.out.println("Benvenuto ADMIN");
                         switchToAdminProfile(event);
                     }
 
 
-                }else{
-                    System.out.println("Errore login");
                 }
             }
 

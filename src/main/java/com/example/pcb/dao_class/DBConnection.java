@@ -19,7 +19,7 @@ public class DBConnection {
 
     public static Connection getDBConnection() throws IOException{
         Properties prop = new Properties();
-        prop.load(new FileInputStream("C:\\Users\\pf23l\\OneDrive\\Desktop\\ISPW TOTAL\\ProgettoISPW\\src\\main\\java\\com\\example\\pcb\\dao_class\\credenzialiDB"));
+        prop.load(new FileInputStream("C:\\Users\\justo\\Desktop\\Progetto\\src\\main\\java\\com\\example\\pcb\\dao_class\\credenzialiDB"));
         String databaseUser = prop.getProperty("databaseUser");
         String databasePassword = prop.getProperty("databasePassword");
         String url = prop.getProperty("url");

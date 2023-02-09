@@ -1,12 +1,12 @@
 package com.example.pcb;
 
 import java.sql.*;
-import java.util.Arrays;
+
 
 public class DaoUtilizzi {
     private static final String databaseName = "parametridb";
     private static final String databaseUser = "root";
-    private static final String databasePassword = "pierfrancesco";
+    private static final String databasePassword = "ciao";
     private static final String url = "jdbc:mysql://localhost/"+ databaseName;
     private static Connection connection;
     private String stringaRicercaUtilizzo;
