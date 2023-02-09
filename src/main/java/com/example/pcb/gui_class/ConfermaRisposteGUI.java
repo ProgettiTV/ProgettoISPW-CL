@@ -67,10 +67,6 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
 
         BeanConferma beanConferma = new BeanConferma(risposta);
 
-        Alert alert1 = new Alert(Alert.AlertType.NONE);
-        alert1.setTitle("mostro errore a utente");
-        alert1.setContentText("errore IO");
-        alert1.show();
 
         if (Objects.equals(risposta, "Conferma")){
 
@@ -88,7 +84,10 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
                     alert.setContentText("errore SQL");
                     alert.show();
                 } catch (QueryException e) {
-                    throw new RuntimeException(e);
+                    Alert alert = new Alert(Alert.AlertType.NONE);
+                    alert.setTitle("mostro errore a utente");
+                    alert.setContentText("errore Query");
+                    alert.show();
                 }
             } catch (DaoException e) {
                 Alert alert = new Alert(Alert.AlertType.NONE);

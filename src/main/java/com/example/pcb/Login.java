@@ -1,12 +1,14 @@
 package com.example.pcb;
 
 import com.example.pcb.dao_class.DBConnection;
+import com.example.pcb.exception.DaoException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -15,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Objects;
 import java.util.Scanner;
@@ -31,6 +34,7 @@ public class Login {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private String errore="mostra errore utente";
 
     public void switchToEntry(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
@@ -90,8 +94,11 @@ public class Login {
                 }
 
 
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (SQLException e) {
+                Alert alert = new Alert(Alert.AlertType.NONE);
+                alert.setTitle(errore);
+                alert.setContentText("SQL errore");
+                alert.show();
             }
 
 
@@ -129,7 +136,10 @@ public class Login {
             else switchToAdminProfile(event);
 
         } catch (IOException e) {
-
+            Alert alert = new Alert(Alert.AlertType.NONE);
+            alert.setTitle(errore);
+            alert.setContentText("IO errore");
+            alert.show();
         }
     }
 

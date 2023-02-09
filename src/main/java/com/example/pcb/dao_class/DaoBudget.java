@@ -49,6 +49,7 @@ public class DaoBudget extends AbstractSubject {
         this.ricercavalore=budgetPreso;
     }
 
+
     public static Connection getDaoBudgetConnection() throws DaoException, IOException {
 
         try{
