@@ -77,16 +77,16 @@ public class Login {
 
                 while (queryLoginResult.next()) {
 
-                    if (queryLoginResult.getInt(1) == 1) {
-                        if (queryLoginResult.getString(2).equals("User")) {
-                            switchToUserProfile(event);
-                        } else if (queryLoginResult.getString(2).equals("Admin")) {
-                            switchToAdminProfile(event);
-                        }
+                    if ((queryLoginResult.getInt(1) == 1) && queryLoginResult.getString(2).equals("User"))
 
+                        switchToUserProfile(event);
 
-                    }
+                    else if ((queryLoginResult.getInt(1) == 1) && queryLoginResult.getString(2).equals("Admin"))
+
+                        switchToAdminProfile(event);
+
                 }
+
 
             } catch (Exception e) {
                 e.printStackTrace();

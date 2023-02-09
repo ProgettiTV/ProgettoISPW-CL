@@ -14,7 +14,7 @@ import com.example.pcb.gui_class.ComponentiGUI;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import java.util.logging.Logger;
+
 
 public  class DomandeUtente {
     private int budget;

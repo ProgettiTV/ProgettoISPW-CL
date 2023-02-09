@@ -23,7 +23,7 @@ public class DaoBudget extends AbstractSubject {
 
     public  DaoBudget(){
 
-
+        //costruttore
     }
 
     public static DaoBudget getInstance(){

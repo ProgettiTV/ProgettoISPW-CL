@@ -48,7 +48,7 @@ public class DaoUtilizzi {
     }
     public  void cercaCaratteristiche() throws SQLException, IOException {
 
-        Statement statement = connection.createStatement();;
+        Statement statement = connection.createStatement();
 
         String[] result = new String[9];
         String ricercaValoreUtilizzo ="SELECT C_CPU,RAM,SCHEDA_VIDEO,SSD,MONITOR,RAFFREDDAMENTO,C_CASE,SCHEDA_MADRE,ALIMENTATORE FROM parametri_utilizzo WHERE nome_utilizzo ='" + ricercaUtilizzo + "'";
