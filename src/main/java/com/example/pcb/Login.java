@@ -66,6 +66,7 @@ public class Login {
         double randomAccess = Math.random() * 20;
 
         if (randomAccess % 2 == 0) {
+
             Connection myConnection = DBConnection.getDBConnection();
 
 
@@ -98,39 +99,39 @@ public class Login {
     }
 
 
-        public void fileLogin(String usernameInserito, String passwordInserita, ActionEvent event) {
-            String[] datiInseriti = new String[2];
-            datiInseriti[0] = usernameInserito;
-            datiInseriti[1] = passwordInserita;
-            String[] datiPresenti = new String[3];
-            String pathFileName = "C:\\init.txt";
-            File inputFile = new File(pathFileName);
-            Scanner scannerDaFile;
-            try {
-                scannerDaFile = new Scanner(inputFile);
+    public void fileLogin(String usernameInserito, String passwordInserita, ActionEvent event) throws IOException {
 
-                int i = 0;
+        String[] datiInseriti = new String[2];
+        datiInseriti[0] = usernameInserito;
+        datiInseriti[1] = passwordInserita;
+        String[] datiPresenti = new String[3];
+        DBConnection DBPath = new DBConnection();
+        String pathFileName = DBPath.getFilePath();
+        File inputFile = new File(pathFileName);
+        Scanner scannerDaFile;
+        try {
+            scannerDaFile = new Scanner(inputFile);
 
-                while (scannerDaFile.hasNextLine() && !((datiInseriti[0]).equals(datiPresenti[0]) && (datiInseriti[1]).equals(datiPresenti[1]))) {
+            int i = 0;
 
-                    datiPresenti[i % 3] = scannerDaFile.nextLine();
+            while (scannerDaFile.hasNextLine() && !((datiInseriti[0]).equals(datiPresenti[0]) && (datiInseriti[1]).equals(datiPresenti[1]))) {
 
-                    i++;
+                datiPresenti[i % 3] = scannerDaFile.nextLine();
 
-                }
-
-
-                if (Objects.equals(scannerDaFile.nextLine(), "User"))
-                    switchToUserProfile(event);
-
-                else switchToAdminProfile(event);
-
-            } catch (IOException e) {
+                i++;
 
             }
+
+
+            if (Objects.equals(scannerDaFile.nextLine(), "User"))
+                switchToUserProfile(event);
+
+            else switchToAdminProfile(event);
+
+        } catch (IOException e) {
+
         }
-
-
+    }
 
 
 }

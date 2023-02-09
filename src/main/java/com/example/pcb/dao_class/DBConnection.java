@@ -13,7 +13,7 @@ public class DBConnection {
 
     private static Connection connection;
 
-    private DBConnection(){
+    public DBConnection(){
 
     }
 
@@ -34,5 +34,14 @@ public class DBConnection {
         }
         return connection;
     }
+
+    public String getFilePath() throws IOException{
+        Properties prop1 = new Properties();
+        prop1.load(new FileInputStream("C:\\Users\\justo\\Desktop\\Progetto\\src\\main\\java\\com\\example\\pcb\\dao_class\\filePath"));
+        String path = prop1.getProperty("path");
+        return path;
+    }
+
+
 
 }
