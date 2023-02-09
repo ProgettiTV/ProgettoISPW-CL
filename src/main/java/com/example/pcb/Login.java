@@ -105,8 +105,8 @@ public class Login {
         datiInseriti[0] = usernameInserito;
         datiInseriti[1] = passwordInserita;
         String[] datiPresenti = new String[3];
-        DBConnection DBPath = new DBConnection();
-        String pathFileName = DBPath.getFilePath();
+        DBConnection dBPath = new DBConnection();
+        String pathFileName = dBPath.getFilePath();
         File inputFile = new File(pathFileName);
         Scanner scannerDaFile;
         try {

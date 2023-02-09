@@ -14,7 +14,7 @@ public class DBConnection {
     private static Connection connection;
 
     public DBConnection(){
-
+        //costruttore
     }
 
     public static Connection getDBConnection() throws IOException{
