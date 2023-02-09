@@ -50,7 +50,7 @@ public class DaoBudget extends AbstractSubject {
     }
 
 
-    public static Connection getDaoBudgetConnection() throws DaoException, IOException {
+    public static Connection getDaoBudgetConnection() {
 
         try{
             if(connection==null){
@@ -64,7 +64,7 @@ public class DaoBudget extends AbstractSubject {
         return connection;
     }
 
-    public void cercaValore() throws SQLException, DaoException {
+    public void cercaValore() throws SQLException {
 
         String ricercaValoreBudget="SELECT valore FROM parametri_budget WHERE idparametri_budget=" + ricercavalore ;
         Statement statement;

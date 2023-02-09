@@ -21,7 +21,7 @@ public class DaoRicercaRam {
         try {
             statement = connection.createStatement();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
         String ricercaRam="SELECT link,caratteristica FROM amazon_componenti WHERE valore=" + ricercavalore + " AND tipo_c='"+"ram'" ;
@@ -37,7 +37,7 @@ public class DaoRicercaRam {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
 

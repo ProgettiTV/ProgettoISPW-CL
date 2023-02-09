@@ -24,7 +24,7 @@ public class DaoRicercaAlimentatore {
         try {
             statement = connection.createStatement();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
 
@@ -39,7 +39,7 @@ public class DaoRicercaAlimentatore {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
 
         }
 

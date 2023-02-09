@@ -22,7 +22,7 @@ public class DaoRicercaMonitor {
             statement = connection.createStatement();
         } catch (SQLException e) {
 
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
 
@@ -38,7 +38,7 @@ public class DaoRicercaMonitor {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
 

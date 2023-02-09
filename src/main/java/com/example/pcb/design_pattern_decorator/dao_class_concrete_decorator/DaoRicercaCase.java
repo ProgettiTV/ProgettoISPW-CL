@@ -22,7 +22,7 @@ public class DaoRicercaCase {
         try {
             statement = connection.createStatement();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
         String ricercaCase="SELECT link,caratteristica FROM amazon_componenti WHERE valore=" + ricercavalore + " AND tipo_c='"+"case'" ;
@@ -39,7 +39,7 @@ public class DaoRicercaCase {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
     }

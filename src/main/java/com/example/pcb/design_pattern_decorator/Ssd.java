@@ -1,7 +1,6 @@
 package com.example.pcb.design_pattern_decorator;
 
 import com.example.pcb.design_pattern_decorator.dao_class_concrete_decorator.DaoRicercaSsd;
-import com.example.pcb.exception.IoException;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -29,14 +28,14 @@ public class Ssd extends  Decorator{
     }
 
 
-    public void cercaSsd() throws IOException {
+    public void cercaSsd() throws IOException, SQLException {
 
         DaoRicercaSsd daoRicercaSsd= new DaoRicercaSsd(this.budgetPerSsd);
 
         try {
             daoRicercaSsd.cercaValore();
         } catch (SQLException e) {
-            throw new RuntimeException("errore in ssd");
+            throw new SQLException("errore in ssd");
         } catch (IOException e) {
             throw new IOException(e);
         }

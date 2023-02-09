@@ -21,7 +21,7 @@ public class DaoRicercaSchedaVideo {
         try {
             statement = connection.createStatement();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
         String ricercaSchedaVideo="SELECT link,caratteristica FROM amazon_componenti WHERE valore=" + ricercavalore + " AND tipo_c='"+"scheda video'" ;
@@ -36,7 +36,7 @@ public class DaoRicercaSchedaVideo {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
     }

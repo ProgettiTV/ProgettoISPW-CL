@@ -33,7 +33,7 @@ public class DaoUtilizzi {
         this.stringaPercentualiUtilizzo = percentualiUtilizzo;
     }
 
-    public static Connection getDaoUtilizziConnection() throws SQLException, IOException {
+    public static Connection getDaoUtilizziConnection(){
         try{
             if(connection==null){
                 connection = DBConnection.getDBConnection();

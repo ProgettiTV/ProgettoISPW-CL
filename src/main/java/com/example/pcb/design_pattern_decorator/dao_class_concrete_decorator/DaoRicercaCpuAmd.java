@@ -25,7 +25,7 @@ public class DaoRicercaCpuAmd {
         try {
             statement = connectionCpuAmd.createStatement();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
         String ricercaCpuAmd="SELECT link,caratteristica FROM amazon_componenti WHERE valore=" + ricercavalore + " AND tipo_c='" + "cpuAmd'" ;
@@ -40,7 +40,7 @@ public class DaoRicercaCpuAmd {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
     }

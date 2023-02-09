@@ -20,7 +20,7 @@ public class DaoRicercaSsd {
         try {
             statement = connection.createStatement();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
 
@@ -38,7 +38,7 @@ public class DaoRicercaSsd {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
     }

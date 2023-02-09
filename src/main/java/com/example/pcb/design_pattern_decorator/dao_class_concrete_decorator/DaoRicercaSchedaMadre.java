@@ -21,7 +21,7 @@ public class DaoRicercaSchedaMadre {
         try {
             statement = connection.createStatement();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
         String ricercaSchedaMadre="SELECT link,caratteristica FROM amazon_componenti WHERE valore=" + ricercavalore + " AND tipo_c='"+"scheda madre'" ;
         try {
@@ -34,7 +34,7 @@ public class DaoRicercaSchedaMadre {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
     }
 

@@ -23,7 +23,7 @@ public class DaoRicercaRaffredamentoAcqua {
         try {
             statement = connectionAffredamentoAcqua.createStatement();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
 
@@ -39,7 +39,7 @@ public class DaoRicercaRaffredamentoAcqua {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
 

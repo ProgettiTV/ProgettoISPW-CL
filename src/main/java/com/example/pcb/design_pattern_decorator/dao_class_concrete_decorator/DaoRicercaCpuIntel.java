@@ -21,7 +21,7 @@ public class DaoRicercaCpuIntel {
         try {
             statement = connectionCpuIntel.createStatement();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
 
@@ -39,7 +39,7 @@ public class DaoRicercaCpuIntel {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
     }

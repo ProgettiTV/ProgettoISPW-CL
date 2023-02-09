@@ -22,7 +22,7 @@ public class DaoRicercaRaffredamentoAria {
         try {
             statement = connectionAffredamentoAria.createStatement();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
 
@@ -38,7 +38,7 @@ public class DaoRicercaRaffredamentoAria {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
 
 
