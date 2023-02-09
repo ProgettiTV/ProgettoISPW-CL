@@ -36,10 +36,11 @@ public class DBConnection {
     }
 
     public String getFilePath() throws IOException{
+
         Properties prop1 = new Properties();
         prop1.load(new FileInputStream("C:\\Users\\justo\\Desktop\\Progetto\\src\\main\\java\\com\\example\\pcb\\dao_class\\filePath"));
-        String path = prop1.getProperty("path");
-        return path;
+        return prop1.getProperty("path");
+
     }
 
 
