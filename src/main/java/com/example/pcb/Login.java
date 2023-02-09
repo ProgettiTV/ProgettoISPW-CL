@@ -40,7 +40,7 @@ public class Login {
     }
 
     public void switchToUserProfile(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("UserProfile.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/UserProfile.fxml")));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -49,7 +49,7 @@ public class Login {
     }
 
     public void switchToAdminProfile(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AdminProfile.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/AdminProfile.fxml")));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

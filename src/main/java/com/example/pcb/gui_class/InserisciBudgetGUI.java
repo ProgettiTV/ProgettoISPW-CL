@@ -1,5 +1,8 @@
-package com.example.pcb;
+package com.example.pcb.gui_class;
 
+import com.example.pcb.*;
+import com.example.pcb.bean_class.BeanModificaBudget;
+import com.example.pcb.bean_class.BeanMostraVecchioBudget;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

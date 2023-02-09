@@ -1,4 +1,4 @@
-package com.example.pcb;
+package com.example.pcb.gui_class;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,14 +10,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class AdminProfile {
+public class AdminProfileGUI {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
     public void switchToAccedi(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Accedi.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("com.example.pcb/Accedi.fxml")));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

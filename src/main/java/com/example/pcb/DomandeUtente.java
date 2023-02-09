@@ -55,7 +55,8 @@ public  class DomandeUtente {
         if(Boolean.TRUE.equals(confermatoRisposte)){
 
 
-            DaoBudget daoBudget=new DaoBudget(budgetProvissorio);
+            DaoBudget daoBudget=new DaoBudget();
+            daoBudget.setRicercavalore(budgetProvissorio);
 
 
             try {

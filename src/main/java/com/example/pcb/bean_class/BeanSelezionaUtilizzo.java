@@ -1,4 +1,4 @@
-package com.example.pcb;
+package com.example.pcb.bean_class;
 
 public class BeanSelezionaUtilizzo {
 

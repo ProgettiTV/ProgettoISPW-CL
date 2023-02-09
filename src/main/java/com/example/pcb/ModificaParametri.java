@@ -1,5 +1,9 @@
 package com.example.pcb;
 
+import com.example.pcb.bean_class.*;
+import com.example.pcb.gui_class.InserisciBudgetGUI;
+import com.example.pcb.gui_class.InserisciUtilizzoGUI;
+
 import java.sql.SQLException;
 import java.util.Arrays;
 

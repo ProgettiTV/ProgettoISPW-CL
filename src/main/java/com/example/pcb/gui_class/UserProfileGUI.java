@@ -1,4 +1,4 @@
-package com.example.pcb;
+package com.example.pcb.gui_class;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class UserProfile {
+public class UserProfileGUI {
 
     private Stage stage;
     private Scene scene;
@@ -26,7 +26,7 @@ public class UserProfile {
     }
 
     public void switchToBudget(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/Budget.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Budget.fxml")));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

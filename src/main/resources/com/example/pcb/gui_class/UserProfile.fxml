@@ -7,21 +7,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcb.UserProfile">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcb.gui_class.UserProfileGUI">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0">
          <image>
-            <Image url="@gui_class/6839531-grey-wallpaper.jpg" />
+            <Image url="@6839531-grey-wallpaper.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="376.0" fitWidth="385.0" layoutX="433.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@gui_class/9043073_rhombus_icon.png" />
+            <Image url="@9043073_rhombus_icon.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="270.0" fitWidth="218.0" layoutX="512.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@gui_class/5340287_man_people_person_user_users_icon.png" />
+            <Image url="@5340287_man_people_person_user_users_icon.png" />
          </image>
       </ImageView>
       <Button layoutX="664.0" layoutY="547.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="35.0" prefWidth="136.0" text="Nuova Configurazione" />
@@ -30,7 +30,7 @@
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@gui_class/216437_back_arrow_icon.png" />
+                  <Image url="@216437_back_arrow_icon.png" />
                </image>
             </ImageView>
          </graphic></Button>
@@ -41,14 +41,14 @@
       </Text>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="66.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@gui_class/Logo.jpeg" />
+            <Image url="@Logo.jpeg" />
          </image>
       </ImageView>
       <Button layoutX="1047.0" layoutY="518.0" mnemonicParsing="false" onAction="#switchToAccedi" style="-fx-background-color: transparent; -fx-text-fill: transparent; -fx-border-fill: transparent;" text="Button">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@gui_class/1564506_close_exit_logout_power_icon.png" />
+                  <Image url="@1564506_close_exit_logout_power_icon.png" />
                </image>
             </ImageView>
          </graphic></Button>

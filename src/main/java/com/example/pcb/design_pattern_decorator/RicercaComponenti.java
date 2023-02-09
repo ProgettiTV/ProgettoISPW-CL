@@ -1,7 +1,7 @@
 package com.example.pcb.design_pattern_decorator;
 
-import com.example.pcb.BeanStampaCompatibilita;
-import com.example.pcb.BeanStampaConfigurazione;
+import com.example.pcb.bean_class.BeanStampaCompatibilita;
+import com.example.pcb.bean_class.BeanStampaConfigurazione;
 import com.example.pcb.CalcoloCompatibilita;
 import com.example.pcb.CreaParametriDiRicerca;
 import com.example.pcb.gui_class.ComponentiGUI;

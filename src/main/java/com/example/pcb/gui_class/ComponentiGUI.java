@@ -1,7 +1,7 @@
 package com.example.pcb.gui_class;
 
-import com.example.pcb.BeanStampaCompatibilita;
-import com.example.pcb.BeanStampaConfigurazione;
+import com.example.pcb.bean_class.BeanStampaCompatibilita;
+import com.example.pcb.bean_class.BeanStampaConfigurazione;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

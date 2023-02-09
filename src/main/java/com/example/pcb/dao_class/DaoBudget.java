@@ -8,10 +8,14 @@ import java.sql.*;
 public class DaoBudget {
 
     private int risultatoBudget;
-    private final int ricercavalore;
-    public  DaoBudget(int budgetPreso){
-        this.ricercavalore=budgetPreso;
+    private int ricercavalore;
+    public  DaoBudget(){
 
+
+    }
+
+    public void setRicercavalore(int budgetPreso){
+        this.ricercavalore=budgetPreso;
     }
 
     public void cercaValore() throws DaoException, IOException {

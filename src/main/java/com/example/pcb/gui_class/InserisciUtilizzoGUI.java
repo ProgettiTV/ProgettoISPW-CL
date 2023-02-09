@@ -1,5 +1,8 @@
-package com.example.pcb;
+package com.example.pcb.gui_class;
 
+import com.example.pcb.bean_class.BeanModificaUtilizzo;
+import com.example.pcb.bean_class.BeanMostraVecchioUtilizzo;
+import com.example.pcb.ModificaParametri;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -68,7 +71,7 @@ public class InserisciUtilizzoGUI {
         BeanModificaUtilizzo beanModificaUtilizzo = new BeanModificaUtilizzo();
         beanModificaUtilizzo.prendiPercentualiInserite(percentualiUtilizzo);
 
-        //ModificaParametri modificaParametri = new ModificaParametri();
+
         modificaParametri.prendiRiferimentoBeanModificaUtilizzo(beanModificaUtilizzo);
     }
 
