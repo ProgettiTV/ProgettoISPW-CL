@@ -113,17 +113,15 @@ public class Login {
 
                     }
                     datiPresenti[i] = scannerDaFile.nextLine();
-                    System.out.println(datiPresenti[i]);
+
                     i++;
                 }
-                System.out.println(" Stop leggere ");
-                System.out.println(usernameInserito);
-                System.out.println(passwordInserita);
+
 
 
                 if ( Objects.equals(scannerDaFile.nextLine(), "User")) {
                     switchToUserProfile(event);
-                    System.out.println(" OKAY2");
+
                 } else {
                     switchToAdminProfile(event);
                 }
