@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class RispostaDomandaBudgetGUI extends SwitchClassGUI{
 
-    private static DomandeUtente domandeUtente;
+    private DomandeUtente domandeUtente;
     private Stage stage;
     private Scene scene;
 
