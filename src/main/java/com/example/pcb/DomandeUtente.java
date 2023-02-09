@@ -64,7 +64,6 @@ public  class DomandeUtente {
 
                 daoBudget.cercaValore();
             } catch (DaoException e) {
-                //logger.log(Level.WARNING, e.getMessage());
                 throw new DaoException("Errore DAO");
             }catch (SQLException e){
                 throw new QueryException("Errore DAO");
