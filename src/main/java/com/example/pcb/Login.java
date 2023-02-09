@@ -63,8 +63,9 @@ public class Login {
         String usernameInserito = usernameTextField.getText();
         String passwordInserita = passwordPasswordField.getText();
 
-        double randomAccess = Math.random()*20;
-        if (randomAccess%2==0) {
+        double randomAccess = Math.random() * 20;
+
+        if (randomAccess % 2 == 0) {
             Connection myConnection = DBConnection.getDBConnection();
 
 
@@ -93,8 +94,11 @@ public class Login {
             }
 
 
-        }else{
+        } else fileLogin(usernameInserito, passwordInserita, event);
+    }
 
+
+        public void fileLogin(String usernameInserito, String passwordInserita, ActionEvent event) {
             String[] datiInseriti = new String[2];
             datiInseriti[0] = usernameInserito;
             datiInseriti[1] = passwordInserita;
@@ -109,24 +113,25 @@ public class Login {
 
                 while (scannerDaFile.hasNextLine() && !((datiInseriti[0]).equals(datiPresenti[0]) && (datiInseriti[1]).equals(datiPresenti[1]))) {
 
-                    datiPresenti[i%3] = scannerDaFile.nextLine();
+                    datiPresenti[i % 3] = scannerDaFile.nextLine();
+                    System.out.println(datiPresenti[i % 3]);
 
                     i++;
+
                 }
 
 
-
-                if ( Objects.equals(scannerDaFile.nextLine(), "User")) {
+                if (Objects.equals(scannerDaFile.nextLine(), "User"))
                     switchToUserProfile(event);
 
-                } else {
-                    switchToAdminProfile(event);
-                }
-            }catch( IOException e){
+                else switchToAdminProfile(event);
+
+            } catch (IOException e) {
 
             }
-
         }
 
-    }
+
+
+
 }
