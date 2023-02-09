@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -71,13 +70,9 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
         if (Objects.equals(risposta, "Conferma")){
 
             try {
+
                 try {
                     riferimentoCapplicativo.prendC(beanConferma);
-                } catch (IOException e) {
-                    Alert alert = new Alert(Alert.AlertType.NONE);
-                    alert.setTitle(errore);
-                    alert.setContentText("errore IO");
-                    alert.show();
                 } catch (SQLException e) {
                     Alert alert = new Alert(Alert.AlertType.NONE);
                     alert.setTitle(errore);

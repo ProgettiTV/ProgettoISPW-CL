@@ -41,7 +41,7 @@ public class ModificaParametri {
     }
 
 
-    public void setVecchioB() throws SQLException, IOException, DaoException {
+    public void setVecchioB() throws SQLException{
         this.vecchioB = beanSelezionaBudget.returnB();
         this.idVecchioB = beanSelezionaBudget.returnB();
 
@@ -70,7 +70,7 @@ public class ModificaParametri {
         setVecchioU();
     }
 
-    private void setVecchioU() throws SQLException, IOException {
+    private void setVecchioU() throws SQLException{
         this.vecchioU = beanSelezionaUtilizzo.returnU();
         this.idUtilizzo = vecchioU;
         DaoUtilizzi daoUtilizziAdmin = new DaoUtilizzi();
@@ -100,7 +100,7 @@ public class ModificaParametri {
         setNuovoU();
     }
 
-    public void setNuovoU() throws SQLException, IOException {
+    public void setNuovoU() throws SQLException{
         this.nuovoU = beanModificaUtilizzo.returnPercentualiInserite();
         DaoUtilizzi daoUtilizziAdmin = new DaoUtilizzi();
 
@@ -114,7 +114,7 @@ public class ModificaParametri {
     }
 
 
-    public void setNuovoB() throws SQLException, IOException, DaoException {
+    public void setNuovoB() throws SQLException {
         this.nuovoB = beanModificaBudget.returnBudgetInserito();
         DaoBudget daoBudgetAdmin = DaoBudget.getInstance();
 

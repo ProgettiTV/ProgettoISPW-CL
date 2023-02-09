@@ -49,7 +49,7 @@ public  class DomandeUtente {
         invioResoconto();
     }
 
-    public void prendC(BeanConferma c) throws DaoException, QueryException, IOException, SQLException {
+    public void prendC(BeanConferma c) throws DaoException, QueryException, SQLException {
          Boolean confermatoRisposte= c.returnBool();
 
         if(Boolean.TRUE.equals(confermatoRisposte)){
@@ -63,9 +63,7 @@ public  class DomandeUtente {
             try {
 
                 daoBudget.cercaValore();
-            } catch (DaoException e) {
-                throw new DaoException("Errore DAO");
-            }catch (SQLException e){
+            } catch (SQLException e){
                 throw new QueryException("Errore SQL");
             }
 
@@ -78,7 +76,7 @@ public  class DomandeUtente {
 
             try {
                 daoUtilizzi.cercaCaratteristiche();
-            } catch (SQLException | IOException e) {
+            } catch (SQLException e) {
                 throw new SQLException(e);
             }
 

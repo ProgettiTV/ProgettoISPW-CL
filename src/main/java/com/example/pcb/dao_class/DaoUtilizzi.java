@@ -1,6 +1,4 @@
 package com.example.pcb.dao_class;
-
-import java.io.IOException;
 import java.sql.*;
 
 public class DaoUtilizzi {

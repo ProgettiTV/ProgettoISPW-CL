@@ -2,9 +2,6 @@ package com.example.pcb.dao_class;
 
 import com.example.pcb.AbstractObserver;
 import com.example.pcb.AbstractSubject;
-import com.example.pcb.exception.DaoException;
-
-import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
