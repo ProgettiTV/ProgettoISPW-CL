@@ -1,9 +1,13 @@
 package com.example.pcb;
 
 import com.example.pcb.bean_class.*;
+import com.example.pcb.dao_class.DaoBudget;
+import com.example.pcb.dao_class.DaoUtilizzi;
+import com.example.pcb.exception.DaoException;
 import com.example.pcb.gui_class.InserisciBudgetGUI;
 import com.example.pcb.gui_class.InserisciUtilizzoGUI;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Arrays;
 
@@ -30,18 +34,19 @@ public class ModificaParametri {
 
 
 
-    public void prendiRiferimentoBean(BeanSelezionaBudget beanSelezionaBudget) throws SQLException {
+    public void prendiRiferimentoBean(BeanSelezionaBudget beanSelezionaBudget) throws SQLException, IOException, DaoException {
         this.beanSelezionaBudget = beanSelezionaBudget;
         setVecchioB();
 
     }
 
 
-    public void setVecchioB() throws SQLException {
+    public void setVecchioB() throws SQLException, IOException, DaoException {
         this.vecchioB = beanSelezionaBudget.returnB();
         this.idVecchioB = beanSelezionaBudget.returnB();
 
         DaoBudget daoBudgetAdmin = DaoBudget.getInstance();
+
         daoBudgetAdmin.setValoreRicercaBudget(vecchioB);
         DaoBudget.getDaoBudgetConnection();
         daoBudgetAdmin.cercaBudget();
@@ -60,12 +65,12 @@ public class ModificaParametri {
 
     }
 
-    public void prendiRiferimentoBeanU(BeanSelezionaUtilizzo beanSelezionaUtilizzo) throws SQLException {
+    public void prendiRiferimentoBeanU(BeanSelezionaUtilizzo beanSelezionaUtilizzo) throws SQLException, IOException {
         this.beanSelezionaUtilizzo = beanSelezionaUtilizzo;
         setVecchioU();
     }
 
-    private void setVecchioU() throws SQLException {
+    private void setVecchioU() throws SQLException, IOException {
         this.vecchioU = beanSelezionaUtilizzo.returnU();
         this.idUtilizzo = vecchioU;
         DaoUtilizzi daoUtilizziAdmin = new DaoUtilizzi();
@@ -85,17 +90,17 @@ public class ModificaParametri {
         inserisciUtilizzoGUI.beanPerStampa(beanMostraVecchioUtilizzo);
     }
 
-    public void prendiRiferimentoBeanModificaBudget(BeanModificaBudget beanModificaBudget) throws SQLException {
+    public void prendiRiferimentoBeanModificaBudget(BeanModificaBudget beanModificaBudget) throws SQLException, IOException, DaoException {
         this.beanModificaBudget=beanModificaBudget;
         setNuovoB();
     }
 
-    public void prendiRiferimentoBeanModificaUtilizzo(BeanModificaUtilizzo beanModificaUtilizzo) throws SQLException {
+    public void prendiRiferimentoBeanModificaUtilizzo(BeanModificaUtilizzo beanModificaUtilizzo) throws SQLException, IOException {
         this.beanModificaUtilizzo=beanModificaUtilizzo;
         setNuovoU();
     }
 
-    public void setNuovoU() throws SQLException {
+    public void setNuovoU() throws SQLException, IOException {
         this.nuovoU = beanModificaUtilizzo.returnPercentualiInserite();
         DaoUtilizzi daoUtilizziAdmin = new DaoUtilizzi();
 
@@ -109,9 +114,10 @@ public class ModificaParametri {
     }
 
 
-    public void setNuovoB() throws SQLException {
+    public void setNuovoB() throws SQLException, IOException, DaoException {
         this.nuovoB = beanModificaBudget.returnBudgetInserito();
         DaoBudget daoBudgetAdmin = DaoBudget.getInstance();
+
 
         daoBudgetAdmin.setValoreRicercaBudget(idVecchioB);
         daoBudgetAdmin.setNuovoValoreBudget(nuovoB);

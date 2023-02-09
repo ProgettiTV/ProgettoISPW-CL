@@ -7,30 +7,50 @@ public class DaoUtilizzi {
 
 
     private String[] risultatoUtilizzo;
-    private final String ricercaUtilizzo;
+    private String ricercaUtilizzo;
+    private static Connection connection;
+    private String stringaRicercaUtilizzo;
+    private String[] rispostaUtilizzoDB;
+    private String[] stringaAggiornamentoUtilizzo;
+    private String stringaPercentualiUtilizzo;
 
 
-    public DaoUtilizzi(String utilizzoPreso) {
+    public DaoUtilizzi() {
+
+        //costruttore
+    }
+
+    public void setRicercaUtilizzo(String utilizzoPreso){
         this.ricercaUtilizzo=utilizzoPreso;
 
     }
 
+    public void setNomeRicercaUtilizzo(String nomeUtilizzo){
+        this.stringaRicercaUtilizzo = nomeUtilizzo;
+    }
 
+    public void setStringaPercentualiUtilizzo(String percentualiUtilizzo){
+        this.stringaPercentualiUtilizzo = percentualiUtilizzo;
+    }
 
+    public static Connection getDaoUtilizziConnection() throws SQLException, IOException {
+        try{
+            if(connection==null){
+                connection = DBConnection.getDBConnection();
 
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return connection;
+
+    }
     public  void cercaCaratteristiche() throws SQLException, IOException {
-        Connection connection=DBConnection.getDBConnection();
-        Statement statement;
+
+        Statement statement = connection.createStatement();;
 
         String[] result = new String[9];
-
-        try {
-            statement = connection.createStatement();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-
         String ricercaValoreUtilizzo ="SELECT C_CPU,RAM,SCHEDA_VIDEO,SSD,MONITOR,RAFFREDDAMENTO,C_CASE,SCHEDA_MADRE,ALIMENTATORE FROM parametri_utilizzo WHERE nome_utilizzo ='" + ricercaUtilizzo + "'";
 
         try {
@@ -51,7 +71,37 @@ public class DaoUtilizzi {
 
     }
 
+    public void cercaPercentualiUtilizzo() throws SQLException {
 
+        rispostaUtilizzoDB = new String[9];
+        String showUtilizzoQuery = "SELECT C_CPU, RAM, SCHEDA_VIDEO, SSD, MONITOR, RAFFREDDAMENTO, C_CASE, SCHEDA_MADRE, ALIMENTATORE FROM parametri_utilizzo WHERE nome_utilizzo = '" + stringaRicercaUtilizzo + "'";
+
+        Statement statement = connection.createStatement();
+        ResultSet queryUtilizzoResult = statement.executeQuery(showUtilizzoQuery);
+
+        while (queryUtilizzoResult.next()){
+            for(int i=0; i<9; i++) {
+                rispostaUtilizzoDB[i]=queryUtilizzoResult.getString(i+1);
+            }
+
+        }
+    }
+    public String[] returnValoreUtilizzoDB(){
+        return rispostaUtilizzoDB;
+    }
+
+
+    public void aggiornaUtilizzo() throws SQLException {
+
+        stringaAggiornamentoUtilizzo = stringaPercentualiUtilizzo.split(",");
+        String updateUtilizzoQuery =  "UPDATE parametri_utilizzo SET C_CPU = '" + stringaAggiornamentoUtilizzo[0] + "', RAM = '" + stringaAggiornamentoUtilizzo[1] + "', SCHEDA_VIDEO = '" + stringaAggiornamentoUtilizzo[2] + "', SSD = '" + stringaAggiornamentoUtilizzo[3] + "', MONITOR = '" + stringaAggiornamentoUtilizzo[4] + "', RAFFREDDAMENTO = '" + stringaAggiornamentoUtilizzo[5] + "', C_CASE = '" + stringaAggiornamentoUtilizzo[6] + "', SCHEDA_MADRE = '" + stringaAggiornamentoUtilizzo[7] + "', ALIMENTATORE = '" + stringaAggiornamentoUtilizzo[8] + "' WHERE nome_utilizzo = '" + stringaRicercaUtilizzo + "'";
+
+
+
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(updateUtilizzoQuery);
+
+    }
 
     public String[] returnListaUtilizzo() {
         return risultatoUtilizzo;

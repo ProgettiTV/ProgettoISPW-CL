@@ -3,6 +3,7 @@ package com.example.pcb.gui_class;
 import com.example.pcb.bean_class.BeanConferma;
 import com.example.pcb.bean_class.BeanMostraResoconto;
 import com.example.pcb.DomandeUtente;
+import com.example.pcb.exception.DaoException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class ConfermaRisposteGUI {
@@ -80,7 +82,7 @@ public class ConfermaRisposteGUI {
 
     }
 
-    public void vaiAComponenti(ActionEvent ae) throws IOException {
+    public void vaiAComponenti(ActionEvent ae) throws IOException, DaoException, SQLException {
 
 
         String risposta = ((Button)ae.getSource()).getText();

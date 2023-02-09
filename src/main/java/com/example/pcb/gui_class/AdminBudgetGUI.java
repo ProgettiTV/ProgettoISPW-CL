@@ -2,6 +2,7 @@ package com.example.pcb.gui_class;
 
 import com.example.pcb.bean_class.BeanSelezionaBudget;
 import com.example.pcb.ModificaParametri;
+import com.example.pcb.exception.DaoException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -58,7 +59,7 @@ public class AdminBudgetGUI {
     }
 
 
-    public void selezionaValoreBudget(ActionEvent event) throws IOException, SQLException {
+    public void selezionaValoreBudget(ActionEvent event) throws IOException, SQLException, DaoException {
 
         String selezioneB = ((Button)event.getSource()).getText();
 

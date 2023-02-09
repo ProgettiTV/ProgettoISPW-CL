@@ -3,6 +3,8 @@ package com.example.pcb.gui_class;
 import com.example.pcb.*;
 import com.example.pcb.bean_class.BeanModificaBudget;
 import com.example.pcb.bean_class.BeanMostraVecchioBudget;
+import com.example.pcb.dao_class.DaoBudget;
+import com.example.pcb.exception.DaoException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -82,12 +84,14 @@ public class InserisciBudgetGUI extends AbstractObserver {
         stampa();
     }
 
-    public void modificaValoreBudget(ActionEvent actionEvent) throws SQLException {
+    public void modificaValoreBudget(ActionEvent actionEvent) throws SQLException, IOException, DaoException {
         String valoreInserito = newBudget.getText();
         BeanModificaBudget beanModificaBudget = new BeanModificaBudget();
         beanModificaBudget.prendiValoreInserito(valoreInserito);
 
-        DaoBudget.getInstance().addObserver(this);
+        DaoBudget daoBudget = DaoBudget.getInstance();
+        daoBudget.setOsservatoreBudget();
+        daoBudget.addObserver(this);
 
 
         modificaParametri.prendiRiferimentoBeanModificaBudget(beanModificaBudget);

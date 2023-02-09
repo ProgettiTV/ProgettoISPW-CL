@@ -66,7 +66,7 @@ public class InserisciUtilizzoGUI {
         oldUtilizzo.setAlignment(Pos.CENTER);
     }
 
-    public void modificaValoreUtilizzo(ActionEvent actionEvent) throws SQLException {
+    public void modificaValoreUtilizzo(ActionEvent actionEvent) throws SQLException, IOException {
         String percentualiUtilizzo = newUtilizzo.getText();
         BeanModificaUtilizzo beanModificaUtilizzo = new BeanModificaUtilizzo();
         beanModificaUtilizzo.prendiPercentualiInserite(percentualiUtilizzo);

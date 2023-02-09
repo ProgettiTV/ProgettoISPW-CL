@@ -49,26 +49,30 @@ public  class DomandeUtente {
         invioResoconto();
     }
 
-    public void prendC(BeanConferma c) {
+    public void prendC(BeanConferma c) throws IOException, DaoException, SQLException {
          Boolean confermatoRisposte= c.returnBool();
 
         if(Boolean.TRUE.equals(confermatoRisposte)){
 
 
-            DaoBudget daoBudget=new DaoBudget();
+            DaoBudget daoBudget=DaoBudget.getInstance();
+            DaoBudget.getDaoBudgetConnection();
             daoBudget.setRicercavalore(budgetProvissorio);
 
 
             try {
+
                 daoBudget.cercaValore();
-            } catch (DaoException e) {
+            } catch (DaoException | SQLException e) {
                 logger.log(Level.WARNING, e.getMessage());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
             }
 
 
-            DaoUtilizzi daoUtilizzi=new DaoUtilizzi(utilizzoProvissorio);
+            DaoUtilizzi daoUtilizzi=new DaoUtilizzi();
+            daoUtilizzi.setRicercaUtilizzo(utilizzoProvissorio);
+            daoUtilizzi.getDaoUtilizziConnection();
+
+
 
             try {
                 daoUtilizzi.cercaCaratteristiche();
