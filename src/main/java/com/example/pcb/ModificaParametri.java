@@ -34,7 +34,7 @@ public class ModificaParametri {
 
 
 
-    public void prendiRiferimentoBean(BeanSelezionaBudget beanSelezionaBudget) throws SQLException, IOException, DaoException {
+    public void prendiRiferimentoBean(BeanSelezionaBudget beanSelezionaBudget) throws SQLException{
         this.beanSelezionaBudget = beanSelezionaBudget;
         setVecchioB();
 
@@ -65,7 +65,7 @@ public class ModificaParametri {
 
     }
 
-    public void prendiRiferimentoBeanU(BeanSelezionaUtilizzo beanSelezionaUtilizzo) throws SQLException, IOException {
+    public void prendiRiferimentoBeanU(BeanSelezionaUtilizzo beanSelezionaUtilizzo) throws SQLException{
         this.beanSelezionaUtilizzo = beanSelezionaUtilizzo;
         setVecchioU();
     }
@@ -90,12 +90,12 @@ public class ModificaParametri {
         inserisciUtilizzoGUI.beanPerStampa(beanMostraVecchioUtilizzo);
     }
 
-    public void prendiRiferimentoBeanModificaBudget(BeanModificaBudget beanModificaBudget) throws SQLException, IOException, DaoException {
+    public void prendiRiferimentoBeanModificaBudget(BeanModificaBudget beanModificaBudget) throws SQLException{
         this.beanModificaBudget=beanModificaBudget;
         setNuovoB();
     }
 
-    public void prendiRiferimentoBeanModificaUtilizzo(BeanModificaUtilizzo beanModificaUtilizzo) throws SQLException, IOException {
+    public void prendiRiferimentoBeanModificaUtilizzo(BeanModificaUtilizzo beanModificaUtilizzo) throws SQLException{
         this.beanModificaUtilizzo=beanModificaUtilizzo;
         setNuovoU();
     }

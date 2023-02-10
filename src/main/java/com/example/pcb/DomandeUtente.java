@@ -49,7 +49,7 @@ public  class DomandeUtente {
         invioResoconto();
     }
 
-    public void prendC(BeanConferma c) throws DaoException, QueryException, SQLException {
+    public void prendC(BeanConferma c) throws QueryException, SQLException{
          Boolean confermatoRisposte= c.returnBool();
 
         if(Boolean.TRUE.equals(confermatoRisposte)){
