@@ -27,7 +27,7 @@ public class Entry implements Initializable {
 
 
     public void switchToAccedi(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Accedi.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/Accedi.fxml")));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -37,7 +37,7 @@ public class Entry implements Initializable {
 
 
     public void switchToRegistrati(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Registrazione.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/Registrazione.fxml")));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

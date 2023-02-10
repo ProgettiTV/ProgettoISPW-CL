@@ -36,7 +36,7 @@ public class Registrazione {
 
 
     public void switchToEntry(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/Entry.fxml")));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -44,7 +44,7 @@ public class Registrazione {
     }
 
     public void switchToUserProfile(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("UserProfile.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/UserProfile.fxml")));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

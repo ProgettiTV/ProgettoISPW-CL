@@ -36,7 +36,7 @@ public class Login {
     private static final String ERRORE="mostra errore utente";
 
     public void switchToEntry(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/Entry.fxml")));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
