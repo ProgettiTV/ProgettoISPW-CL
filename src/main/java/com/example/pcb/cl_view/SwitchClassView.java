@@ -84,4 +84,9 @@ public class SwitchClassView {
         InserisciUView inserisciUView = new InserisciUView();
         inserisciUView.inserisciNuovoParametro(inserisciUtilizzoGUI);
     }
+
+    public void switchToRegistrazione() throws IOException {
+        RegistrazioneView registrazione = new RegistrazioneView();
+        registrazione.registerUser();
+    }
 }

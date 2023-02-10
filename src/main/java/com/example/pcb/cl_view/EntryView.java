@@ -11,7 +11,7 @@ public class EntryView {
 
     public void inizio() throws IOException {
         System.out.println("------------------------------- PC Builder -------------------------------");
-        System.out.println("digita ciò che vuoi fare! Hai due possibilita: 1)Accedi 2) Registrazione");
+        System.out.println("digita ciò che vuoi fare! Hai due possibilita: 1)Accedi 2)Registrazione");
         System.out.println("Inserisci cosa desideri fare:");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
@@ -19,12 +19,12 @@ public class EntryView {
 
         if(input.equals("Accedi")){
 
-            AccediView accedi = new AccediView();
-            accedi.validaLogin();
+            switchClassView.switchToLogin();
 
         }else if (input.equals("Registrazione")){
-            RegistrazioneView registrazione = new RegistrazioneView();
-            registrazione.registerUser();
+
+            switchClassView.switchToRegistrazione();
+
         }
 
     }
