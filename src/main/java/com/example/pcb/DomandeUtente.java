@@ -61,7 +61,7 @@ public  class DomandeUtente {
             try {
 
                 daoBudget.cercaValore();
-            } catch (SQLException e){
+            } catch (QueryException e){
                 throw new QueryException("Errore SQL");
             }
 
