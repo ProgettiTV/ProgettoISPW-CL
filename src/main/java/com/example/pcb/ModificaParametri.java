@@ -3,11 +3,8 @@ package com.example.pcb;
 import com.example.pcb.bean_class.*;
 import com.example.pcb.dao_class.DaoBudget;
 import com.example.pcb.dao_class.DaoUtilizzi;
-import com.example.pcb.exception.DaoException;
 import com.example.pcb.gui_class.InserisciBudgetGUI;
 import com.example.pcb.gui_class.InserisciUtilizzoGUI;
-
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Arrays;
 
