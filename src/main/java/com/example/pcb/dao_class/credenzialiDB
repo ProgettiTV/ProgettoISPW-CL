@@ -1,4 +1,4 @@
 databaseName = parametridb
 databaseUser = root
-databasePassword = pierfrancesco
+databasePassword = ciao
 url = jdbc:mysql://localhost/parametridb

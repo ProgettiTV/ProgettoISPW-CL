@@ -3,7 +3,6 @@ package com.example.pcb.gui_class;
 import com.example.pcb.bean_class.BeanConferma;
 import com.example.pcb.bean_class.BeanMostraResoconto;
 import com.example.pcb.DomandeUtente;
-import com.example.pcb.exception.DaoException;
 import com.example.pcb.exception.QueryException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -70,24 +69,16 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
         if (Objects.equals(risposta, "Conferma")){
 
             try {
-
-                try {
-                    riferimentoCapplicativo.prendC(beanConferma);
-                } catch (SQLException e) {
-                    Alert alert = new Alert(Alert.AlertType.NONE);
-                    alert.setTitle(errore);
-                    alert.setContentText("errore SQL");
-                    alert.show();
-                } catch (QueryException e) {
-                    Alert alert = new Alert(Alert.AlertType.NONE);
-                    alert.setTitle(errore);
-                    alert.setContentText("errore Query");
-                    alert.show();
-                }
-            } catch (DaoException e) {
+                riferimentoCapplicativo.prendC(beanConferma);
+            } catch (SQLException e) {
                 Alert alert = new Alert(Alert.AlertType.NONE);
                 alert.setTitle(errore);
-                alert.setContentText("dao errore");
+                alert.setContentText("errore SQL");
+                alert.show();
+            } catch (QueryException e) {
+                Alert alert = new Alert(Alert.AlertType.NONE);
+                alert.setTitle(errore);
+                alert.setContentText("errore Query");
                 alert.show();
             }
 
