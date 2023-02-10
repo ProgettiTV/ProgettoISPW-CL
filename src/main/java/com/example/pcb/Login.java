@@ -1,7 +1,6 @@
 package com.example.pcb;
 
 import com.example.pcb.dao_class.DBConnection;
-import com.example.pcb.exception.DaoException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,7 +33,7 @@ public class Login {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    private String errore="mostra errore utente";
+    private final String errore="mostra errore utente";
 
     public void switchToEntry(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
