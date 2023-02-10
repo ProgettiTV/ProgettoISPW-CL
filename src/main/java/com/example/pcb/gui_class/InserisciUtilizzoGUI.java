@@ -17,12 +17,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class InserisciUtilizzoGUI extends SwitchClassGUI{
+public class InserisciUtilizzoGUI{
 
-    @FXML
-    private TextField oldUtilizzo;
-    @FXML
-    private TextField newUtilizzo;
+
     private BeanMostraVecchioUtilizzo riferimentoU;
     private String mostraVecchioU;
 

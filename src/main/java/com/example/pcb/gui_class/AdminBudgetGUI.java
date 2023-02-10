@@ -16,13 +16,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class AdminBudgetGUI extends SwitchClassGUI{
-
-   private Stage stage;
-    private Scene scene;
+public class AdminBudgetGUI{
 
     private final InserisciBudgetGUI inserisciBudgetGUI;
-
 
 
     public AdminBudgetGUI(){
@@ -30,21 +26,6 @@ public class AdminBudgetGUI extends SwitchClassGUI{
         this.inserisciBudgetGUI =new InserisciBudgetGUI();
     }
 
-
-
-    public void switchToInserisciBudget(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("InserisciBudget.fxml"));
-
-        loader.setControllerFactory(f -> inserisciBudgetGUI);
-
-        scene = new Scene(loader.load());
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-        //inserisciBudgetGUI.prova();
-
-    }
 
 
     public void selezionaValoreBudget(String risposta) throws IOException, SQLException, DaoException {

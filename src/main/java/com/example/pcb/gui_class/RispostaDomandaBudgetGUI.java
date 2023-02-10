@@ -14,26 +14,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
-public class RispostaDomandaBudgetGUI extends SwitchClassGUI{
+public class RispostaDomandaBudgetGUI{
 
     private DomandeUtente domandeUtente;
-    private Stage stage;
-    private Scene scene;
-
-
-    public void switchToUtilizzo(ActionEvent event) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("Utilizzo.fxml"));
-        loader.setControllerFactory(f -> new RispostaDomandaUtilizzoGUI(domandeUtente));
-        scene = new Scene(loader.load());
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
-
 
 
     public void selezionaRisposteBudget(String rispostaUtente) throws IOException {
@@ -44,6 +27,7 @@ public class RispostaDomandaBudgetGUI extends SwitchClassGUI{
         domandeUtente.prendB(b);
         SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
         switchClassView.switchToUtilizzo(domandeUtente);
+
     }
 
 

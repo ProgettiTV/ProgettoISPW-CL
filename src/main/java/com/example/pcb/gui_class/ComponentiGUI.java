@@ -2,46 +2,13 @@ package com.example.pcb.gui_class;
 
 import com.example.pcb.bean_class.BeanStampaCompatibilita;
 import com.example.pcb.bean_class.BeanStampaConfigurazione;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 
-public class ComponentiGUI extends SwitchClassGUI{
 
-    @FXML
-    private TextField compatibilita;
-    @FXML
-    private TextField componenteCpu;
-    @FXML
-    private TextField componenteSchedaMadre;
-    @FXML
-    private TextField componenteRam;
-    @FXML
-    private TextField componenteSchedaVideo;
-    @FXML
-    private TextField componenteSsd;
-    @FXML
-    private TextField componenteAlimentatore;
-    @FXML
-    private TextField componenteCase;
-    @FXML
-    private TextField componenteRaffredamento;
-    @FXML
-    private TextField componenteMonitor;
+public class ComponentiGUI{
 
     private List<String> stampaConfigurazione;
     private String percentualeCompatibilita;
-
-
 
 
     public void prendiBeanStampaConfigurazione(BeanStampaConfigurazione beanStampaConfigurazione) {

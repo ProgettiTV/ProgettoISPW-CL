@@ -1,6 +1,5 @@
 package com.example.pcb.cl_view;
 
-import com.example.pcb.Login;
 import com.example.pcb.Registrazione;
 
 import java.io.IOException;
@@ -25,7 +24,7 @@ public class RegistrazioneView {
         Registrazione registrazione = new Registrazione();
         if(accedi.equals("si"))
 
-            registrazione.registerUser();
+            registrazione.registerUser(nome, cognome, username, password);
 
         else
             registrazione.tornaIndietro();

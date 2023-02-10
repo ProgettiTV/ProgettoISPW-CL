@@ -26,42 +26,8 @@ import java.util.Scanner;
 
 public class Login {
 
-    @FXML
-    private TextField usernameTextField;
-
-    @FXML
-    private PasswordField passwordPasswordField;
-
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
     private static final String ERRORE="mostra errore utente";
 
-    public void switchToEntry(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/Entry.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void switchToUserProfile(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/UserProfile.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
-    public void switchToAdminProfile(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui_class/AdminProfile.fxml")));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-    }
 
     public void validateLogin(String username, String password) throws IOException {
 

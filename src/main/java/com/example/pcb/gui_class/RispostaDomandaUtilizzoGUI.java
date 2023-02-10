@@ -16,12 +16,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class RispostaDomandaUtilizzoGUI extends SwitchClassGUI{
+public class RispostaDomandaUtilizzoGUI{
 
-        private final DomandeUtente istanzaCA ;
-
-        private Stage stage;
-        private Scene scene;
+    private final DomandeUtente istanzaCA ;
 
 
 
@@ -31,21 +28,6 @@ public class RispostaDomandaUtilizzoGUI extends SwitchClassGUI{
     }
 
 
-        public void switchToConferma(ActionEvent event) throws IOException {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("Conferma.fxml"));
-
-            ConfermaRisposteGUI cRisposte=new ConfermaRisposteGUI(istanzaCA);
-
-            loader.setControllerFactory(f -> cRisposte);
-
-            scene = new Scene(loader.load());
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-            cRisposte.crea();
-
-        }
 
 
 
