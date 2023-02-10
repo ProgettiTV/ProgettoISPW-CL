@@ -2,6 +2,7 @@ package com.example.pcb;
 
 import com.example.pcb.cl_view.SwitchClassView;
 import com.example.pcb.dao_class.DBConnection;
+import com.example.pcb.exception.DaoException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -101,6 +102,8 @@ public class Login {
                 alert.setTitle(ERRORE);
                 alert.setContentText("SQL errore");
                 alert.show();
+            } catch (DaoException e) {
+                throw new RuntimeException(e);
             }
 
 
@@ -146,6 +149,10 @@ public class Login {
             alert.setTitle(ERRORE);
             alert.setContentText("IO errore");
             alert.show();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (DaoException e) {
+            throw new RuntimeException(e);
         }
     }
 

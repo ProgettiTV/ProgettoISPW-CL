@@ -44,14 +44,14 @@ public class InserisciUtilizzoGUI extends SwitchClassGUI{
     }
 
     private void stampa() {
-        oldUtilizzo.setText(mostraVecchioU);
-        oldUtilizzo.setAlignment(Pos.CENTER);
+
+        System.out.println("Le percentuali dell'utilizzo selezionato sono: "+ mostraVecchioU);
+
     }
 
-    public void modificaValoreUtilizzo(ActionEvent actionEvent) throws SQLException, IOException {
-        String percentualiUtilizzo = newUtilizzo.getText();
+    public void modificaValoreUtilizzo(String risposta) throws SQLException, IOException {
         BeanModificaUtilizzo beanModificaUtilizzo = new BeanModificaUtilizzo();
-        beanModificaUtilizzo.prendiPercentualiInserite(percentualiUtilizzo);
+        beanModificaUtilizzo.prendiPercentualiInserite(risposta);
 
 
         modificaParametri.prendiRiferimentoBeanModificaUtilizzo(beanModificaUtilizzo);

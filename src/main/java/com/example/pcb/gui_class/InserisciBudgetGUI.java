@@ -66,7 +66,8 @@ public class InserisciBudgetGUI extends AbstractObserver{
     }
     public void stampa(){
 
-        oldBudget.setText(mostraVecchioB);
+        System.out.println("Il budget selezionato è : "+ mostraVecchioB);
+
     }
 
 
@@ -82,8 +83,8 @@ public class InserisciBudgetGUI extends AbstractObserver{
         stampa();
     }
 
-    public void modificaValoreBudget(ActionEvent actionEvent) throws SQLException, IOException, DaoException {
-        String valoreInserito = newBudget.getText();
+    public void modificaValoreBudget(String risposta) throws SQLException, IOException, DaoException {
+        String valoreInserito = risposta;
         BeanModificaBudget beanModificaBudget = new BeanModificaBudget();
         beanModificaBudget.prendiValoreInserito(valoreInserito);
 
@@ -100,8 +101,8 @@ public class InserisciBudgetGUI extends AbstractObserver{
     @Override
     public void updateBudget(int budget) {
 
-        oldBudget.setText(String.valueOf(budget));
-        newBudget.clear();
+        System.out.println(budget);
+
 
     }
 

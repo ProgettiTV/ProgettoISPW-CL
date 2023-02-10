@@ -2,6 +2,7 @@ package com.example.pcb.gui_class;
 
 import com.example.pcb.bean_class.BeanSelezionaBudget;
 import com.example.pcb.ModificaParametri;
+import com.example.pcb.cl_view.SwitchClassView;
 import com.example.pcb.exception.DaoException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -41,19 +42,17 @@ public class AdminBudgetGUI extends SwitchClassGUI{
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-        inserisciBudgetGUI.prova();
+        //inserisciBudgetGUI.prova();
 
     }
 
 
-    public void selezionaValoreBudget(ActionEvent event) throws IOException, SQLException, DaoException {
-
-        String selezioneB = ((Button)event.getSource()).getText();
+    public void selezionaValoreBudget(String risposta) throws IOException, SQLException, DaoException {
 
         BeanSelezionaBudget beanSelezionaBudget =new BeanSelezionaBudget();
 
 
-        beanSelezionaBudget.traduciB(selezioneB);
+        beanSelezionaBudget.traduciB(risposta);
 
         ModificaParametri modificaParametri= new ModificaParametri();
         modificaParametri.prendiRiferimentoBean(beanSelezionaBudget);
@@ -61,7 +60,8 @@ public class AdminBudgetGUI extends SwitchClassGUI{
 
         inserisciBudgetGUI.prendiRiferimentoCAB(modificaParametri);
 
-        switchToInserisciBudget(event);
+        SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+        switchClassView.switchToInserisciBudget(inserisciBudgetGUI);
     }
 
 }

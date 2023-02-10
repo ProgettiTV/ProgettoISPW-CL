@@ -1,14 +1,16 @@
 package com.example.pcb.cl_view;
 
+import com.example.pcb.gui_class.InserisciUtilizzoGUI;
+
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class InserisciUView {
-    public void inserisciNuoviParametro() {
+    public void inserisciNuovoParametro(InserisciUtilizzoGUI inserisciUtilizzoGUI) throws SQLException, IOException {
         System.out.println("------------------------------- PC Builder -------------------------------");
         System.out.println("Sei nella pagina per modificare l'utilizzo!");
-        String utilizzoOld ="";
-        String utilizzoAttuale ="1354";
-        System.out.println("ecco il vecchio utilizzo: "+ utilizzoOld);
+        inserisciUtilizzoGUI.prova();
         System.out.println("inserisci il nuovo utilizzo:");
         Scanner scannerU = new Scanner(System.in);
         String utilizzoNew = scannerU.nextLine();
@@ -17,13 +19,15 @@ public class InserisciUView {
         String confermaModifiche = scanner.nextLine();
 
         if(confermaModifiche.equals("si")){
-            //invio nuovo utilizzo
 
-
+            inserisciUtilizzoGUI.modificaValoreUtilizzo(utilizzoNew);
 
         }else{
-            //ricomincia
+
+            SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+            switchClassView.switchToInserisciUtilizzo(inserisciUtilizzoGUI);
+
         }
-        System.out.println("parametro attuale è: "+ utilizzoAttuale);
+
     }
 }

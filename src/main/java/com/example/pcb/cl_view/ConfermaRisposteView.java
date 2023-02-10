@@ -1,7 +1,6 @@
 package com.example.pcb.cl_view;
 
 import com.example.pcb.DomandeUtente;
-import com.example.pcb.gui_class.ComponentiGUI;
 import com.example.pcb.gui_class.ConfermaRisposteGUI;
 
 import java.io.IOException;

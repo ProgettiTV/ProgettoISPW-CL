@@ -2,6 +2,7 @@ package com.example.pcb.gui_class;
 
 import com.example.pcb.bean_class.BeanSelezionaUtilizzo;
 import com.example.pcb.ModificaParametri;
+import com.example.pcb.cl_view.SwitchClassView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -40,19 +41,19 @@ public class AdminUtilizziGUI extends SwitchClassGUI{
 
     }
 
-    public void selezionaNomeUtilizzo(ActionEvent actionEvent) throws IOException, SQLException {
-
-        String utilizzo = ((Button)actionEvent.getSource()).getText();
+    public void selezionaNomeUtilizzo(String risposta) throws IOException, SQLException {
 
         BeanSelezionaUtilizzo beanSelezionaUtilizzo = new BeanSelezionaUtilizzo();
-        beanSelezionaUtilizzo.prendiU(utilizzo);
+        beanSelezionaUtilizzo.prendiU(risposta);
 
         ModificaParametri modificaParametri= new ModificaParametri();
         modificaParametri.prendiRiferimentoBeanU(beanSelezionaUtilizzo);
         modificaParametri.prendiBeanRiferimentoInviaVecchioU(inserisciUtilizzoGUI);
 
         inserisciUtilizzoGUI.prendiRiferimentoCAU(modificaParametri);
-        switchToInserisciUtilizzo(actionEvent);
+
+        SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+        switchClassView.switchToInserisciUtilizzo(inserisciUtilizzoGUI);
 
     }
 }

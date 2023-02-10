@@ -1,14 +1,21 @@
 package com.example.pcb.cl_view;
 
+import com.example.pcb.exception.DaoException;
+import com.example.pcb.gui_class.InserisciBudgetGUI;
+
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class InserisciBView {
-    public void inserisciNuoviParametro() {
+    public void inserisciNuoviParametro(InserisciBudgetGUI inserisciBudgetGUI) throws SQLException, IOException, DaoException {
+
+
         System.out.println("------------------------------- PC Builder -------------------------------");
         System.out.println("Sei nella pagina per modificare il budget!");
-        String budgetOld="";
-        String budgetAttuale="1354";
-        System.out.println("ecco il vecchio budget: "+ budgetOld);
+
+        inserisciBudgetGUI.prova();
+
         System.out.println("inserisci il nuovo budget:");
         Scanner scanner1 = new Scanner(System.in);
         String budgetNew = scanner1.nextLine();
@@ -17,14 +24,16 @@ public class InserisciBView {
         String confermaModifiche = scanner.nextLine();
 
         if(confermaModifiche.equals("si")){
-            //invio nuovo budget
+
+            inserisciBudgetGUI.modificaValoreBudget(budgetNew);
 
 
 
         }else{
-            //ricomincia
+            SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+            switchClassView.switchToInserisciBudget(inserisciBudgetGUI);
         }
-        System.out.println("parametro attuale è: "+ budgetAttuale);
+
 
 
     }
