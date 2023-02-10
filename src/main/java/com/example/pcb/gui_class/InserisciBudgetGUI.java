@@ -26,8 +26,6 @@ public class InserisciBudgetGUI extends AbstractObserver{
     private TextField oldBudget;
     @FXML
     private TextField newBudget;
-    @FXML
-    private TextField obsTextField;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -101,7 +99,9 @@ public class InserisciBudgetGUI extends AbstractObserver{
 
     @Override
     public void updateBudget(int budget) {
-        obsTextField.setText(String.valueOf(budget));
+
+        oldBudget.setText(String.valueOf(budget));
+        newBudget.clear();
 
     }
 
