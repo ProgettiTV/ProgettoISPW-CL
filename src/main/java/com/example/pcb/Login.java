@@ -33,7 +33,7 @@ public class Login {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    private final String errore="mostra errore utente";
+    private static final String errore="mostra errore utente";
 
     public void switchToEntry(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
