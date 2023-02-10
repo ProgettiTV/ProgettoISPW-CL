@@ -1,4 +1,4 @@
-package org.example;
+package com.example.pcb.cl_view;
 
 import java.util.Scanner;
 

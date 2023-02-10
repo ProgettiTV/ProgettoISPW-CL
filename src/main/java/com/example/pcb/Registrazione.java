@@ -1,5 +1,6 @@
 package com.example.pcb;
 
+import com.example.pcb.cl_view.SwitchClassView;
 import com.example.pcb.dao_class.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,7 +53,7 @@ public class Registrazione {
 
     }
 
-    public void registerUser(ActionEvent event) throws IOException {
+    public void registerUser() throws IOException {
 
         Connection myConnection = DBConnection.getDBConnection();
 
@@ -71,7 +72,7 @@ public class Registrazione {
 
             Statement statement = myConnection.createStatement();
             statement.executeUpdate(insertToRegister);
-            switchToUserProfile(event);
+            //switchToUserProfile(event);
 
         }catch(Exception e){
             e.printStackTrace();
@@ -82,4 +83,8 @@ public class Registrazione {
 
     }
 
+    public void tornaIndietro() throws IOException {
+        SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+        switchClassView.switchToEntry();
+    }
 }

@@ -1,9 +1,12 @@
-package org.example;
+package com.example.pcb.cl_view;
 
+import com.example.pcb.gui_class.RispostaDomandaBudgetGUI;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class DomandeBudgetView {
-    public void selezionaRisposteB(){
+    public void selezionaRisposteB() throws IOException {
         System.out.println("------------------------------- PC Builder -------------------------------");
         System.out.println("Sei nella pagina per Rispondere alla domanda sul budget!");
         System.out.println("Puoi selezionare 5 budget: 1) € 2) €€ 3) €€€ 4) €€€€ 5) €€€€€ ");
@@ -11,9 +14,14 @@ public class DomandeBudgetView {
         Scanner scanner = new Scanner(System.in);
         String rispostaUtente = scanner.nextLine();
         if(rispostaUtente.equals("indietro")){
-            // torna alla pagina indietro
+
+            SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+            switchClassView.switchToUserProfile();
+
         }else{
-            //invia la riposta alla classe sotto
+
+            RispostaDomandaBudgetGUI rispostaDomandaBudgetGUI = new RispostaDomandaBudgetGUI();
+            rispostaDomandaBudgetGUI.selezionaRisposteBudget(rispostaUtente);
 
         }
     }

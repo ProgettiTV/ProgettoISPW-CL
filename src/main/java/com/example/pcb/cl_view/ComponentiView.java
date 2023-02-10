@@ -1,11 +1,14 @@
-package org.example;
+package com.example.pcb.cl_view;
+
+import com.example.pcb.gui_class.ComponentiGUI;
 
 public class ComponentiView {
-    public void mostraRicercaComponenti() {
+    public void mostraRicercaComponenti(ComponentiGUI componentiGUI) {
         System.out.println("------------------------------- PC Builder -------------------------------");
         System.out.println("Sei nella pagina per visualizzare i link delle componenti per la tua Configurazione e la sua percentuale di compatibilità!");
         System.out.println("Una possibile configurazione trovata in base alle tue risposte è:");
-        String schedaMadre="";
+        componentiGUI.prontoPerStampa();
+        /*String schedaMadre="";
         String cpu="";
         String raffredamento="";
         String monitor="";
@@ -27,7 +30,7 @@ public class ComponentiView {
         System.out.println("Case: " + c_case);
 
 
-        System.out.println("Compatibilità del " + compatibilita + "tra  le tue componenti trovate");
+        System.out.println("Compatibilità del " + compatibilita + "tra  le tue componenti trovate");*/
 
         System.out.println("puoi salvare la configurazione e valutare la configurazione (non implementate)");
 

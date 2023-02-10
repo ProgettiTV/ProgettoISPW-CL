@@ -4,6 +4,7 @@ package com.example.pcb.gui_class;
 import com.example.pcb.bean_class.BeanUtilizzo;
 import com.example.pcb.DomandeUtente;
 
+import com.example.pcb.cl_view.SwitchClassView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -48,14 +49,16 @@ public class RispostaDomandaUtilizzoGUI extends SwitchClassGUI{
 
 
 
-    public void vaiAConferma(ActionEvent ae) throws IOException {
+    public void vaiAConferma(String risposta) throws IOException {
 
-        String risposta = ((Button)ae.getSource()).getText();
+        String rispostaU = risposta;
 
         BeanUtilizzo u = new BeanUtilizzo(risposta);
         istanzaCA.prendU(u);
 
-        switchToConferma(ae);
+        SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+        switchClassView.switchToConferma(istanzaCA);
+
 
     }
 

@@ -1,9 +1,13 @@
-package org.example;
+package com.example.pcb.cl_view;
 
+import com.example.pcb.DomandeUtente;
+import com.example.pcb.gui_class.RispostaDomandaUtilizzoGUI;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class DomandeUtilizzoView {
-    public void selezionaRisposteU() {
+    public void selezionaRisposteU(DomandeUtente domandeUtente) throws IOException {
         System.out.println("------------------------------- PC Builder -------------------------------");
         System.out.println("Sei nella pagina per Rispondere alla domanda sull'utilizzo!");
         System.out.println("Puoi selezionare 5 utilizzi: 1) Professore 2) Gaming 3) Studente 4) Musicista 5) Illustratore ");
@@ -11,9 +15,11 @@ public class DomandeUtilizzoView {
         Scanner scanner = new Scanner(System.in);
         String rispostaUtente = scanner.nextLine();
         if (rispostaUtente.equals("indietro")) {
-            // torna alla pagina indietro
+            SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+            switchClassView.switchToBudget();
         } else {
-            //invia alla classe sotto
+            RispostaDomandaUtilizzoGUI rispostaDomandaUtilizzoGUI = new RispostaDomandaUtilizzoGUI(domandeUtente);
+            rispostaDomandaUtilizzoGUI.vaiAConferma(rispostaUtente);
 
         }
     }

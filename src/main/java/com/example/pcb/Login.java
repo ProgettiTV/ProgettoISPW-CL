@@ -1,5 +1,6 @@
 package com.example.pcb;
 
+import com.example.pcb.cl_view.SwitchClassView;
 import com.example.pcb.dao_class.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,10 +62,11 @@ public class Login {
 
     }
 
-    public void validateLogin(ActionEvent event) throws IOException {
+    public void validateLogin(String username, String password) throws IOException {
 
-        String usernameInserito = usernameTextField.getText();
-        String passwordInserita = passwordPasswordField.getText();
+        String usernameInserito = username;
+        String passwordInserita = password;
+
 
         double randomAccess = Math.random() * 20;
 
@@ -82,14 +84,15 @@ public class Login {
 
                 while (queryLoginResult.next()) {
 
-                    if ((queryLoginResult.getInt(1) == 1) && queryLoginResult.getString(2).equals("User"))
+                    if ((queryLoginResult.getInt(1) == 1) && queryLoginResult.getString(2).equals("User")) {
+                        SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+                        switchClassView.switchToUserProfile();
+                    }
+                    else if ((queryLoginResult.getInt(1) == 1) && queryLoginResult.getString(2).equals("Admin")) {
 
-                        switchToUserProfile(event);
-
-                    else if ((queryLoginResult.getInt(1) == 1) && queryLoginResult.getString(2).equals("Admin"))
-
-                        switchToAdminProfile(event);
-
+                        SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+                        switchClassView.switchToAdminProfile();
+                    }
                 }
 
 
@@ -101,11 +104,11 @@ public class Login {
             }
 
 
-        } else fileLogin(usernameInserito, passwordInserita, event);
+        } else fileLogin(usernameInserito, passwordInserita);
     }
 
 
-    public void fileLogin(String usernameInserito, String passwordInserita, ActionEvent event) throws IOException {
+    public void fileLogin(String usernameInserito, String passwordInserita) throws IOException {
 
         String[] datiInseriti = new String[2];
         datiInseriti[0] = usernameInserito;
@@ -129,10 +132,14 @@ public class Login {
             }
 
 
-            if (Objects.equals(scannerDaFile.nextLine(), "User"))
-                switchToUserProfile(event);
-
-            else switchToAdminProfile(event);
+            if (Objects.equals(scannerDaFile.nextLine(), "User")) {
+                SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+                switchClassView.switchToUserProfile();
+            }
+            else {
+                SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+                switchClassView.switchToAdminProfile();
+            }
 
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.NONE);
@@ -143,4 +150,8 @@ public class Login {
     }
 
 
+    public void tornaIndietro() throws IOException {
+        SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+        switchClassView.switchToEntry();
+    }
 }

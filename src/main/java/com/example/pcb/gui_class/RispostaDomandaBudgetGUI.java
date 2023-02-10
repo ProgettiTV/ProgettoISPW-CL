@@ -2,6 +2,7 @@ package com.example.pcb.gui_class;
 
 import com.example.pcb.bean_class.BeanBudget;
 import com.example.pcb.DomandeUtente;
+import com.example.pcb.cl_view.SwitchClassView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -35,13 +36,14 @@ public class RispostaDomandaBudgetGUI extends SwitchClassGUI{
 
 
 
-    public void selezionaRisposteBudget(ActionEvent ae) throws IOException {
+    public void selezionaRisposteBudget(String rispostaUtente) throws IOException {
 
-        String risposta = ((Button)ae.getSource()).getText();
+        String risposta = rispostaUtente;
         BeanBudget b = new BeanBudget(risposta);
         domandeUtente= new DomandeUtente();
         domandeUtente.prendB(b);
-        switchToUtilizzo(ae);
+        SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+        switchClassView.switchToUtilizzo(domandeUtente);
     }
 
 

@@ -3,6 +3,7 @@ package com.example.pcb.gui_class;
 import com.example.pcb.bean_class.BeanConferma;
 import com.example.pcb.bean_class.BeanMostraResoconto;
 import com.example.pcb.DomandeUtente;
+import com.example.pcb.cl_view.SwitchClassView;
 import com.example.pcb.exception.QueryException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,9 +39,6 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
     }
 
 
-    public ConfermaRisposteGUI() {
-
-    }
 
     public void switchToComponenti(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -58,10 +56,10 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
 
 
 
-    public void vaiAComponenti(ActionEvent ae) throws IOException  {
+    public void vaiAComponenti(String risposta) throws IOException  {
         String errore="mostra errore a utente";
 
-        String risposta = ((Button)ae.getSource()).getText();
+
 
         BeanConferma beanConferma = new BeanConferma(risposta);
 
@@ -97,11 +95,12 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
                 alert.setContentText("SQL errore");
                 alert.show();
             }
-
-            switchToComponenti(ae);
+            SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+            switchClassView.switchToComponenti(componentiGUI);
         }
         else{
-            switchToBudget(ae);
+            SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
+            switchClassView.switchToBudget();
         }
 
 
@@ -121,8 +120,8 @@ public class ConfermaRisposteGUI extends SwitchClassGUI{
         String budget= mR.returnStampaB();
         String utilizzo= mR.returnStampaU();
 
-        budgetTextField.setText(budget);
-        utilizzoTextField.setText(utilizzo);
+        System.out.println("Il budget scelto è: "+ budget);
+        System.out.println("L'utilizzo scelto è: "+ utilizzo);
 
 
     }

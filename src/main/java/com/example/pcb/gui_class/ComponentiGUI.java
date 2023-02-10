@@ -52,16 +52,17 @@ public class ComponentiGUI extends SwitchClassGUI{
     }
     public void prontoPerStampa() {
 
-        this.componenteCpu.setText(stampaConfigurazione.get(0));
-        this.componenteRam.setText(stampaConfigurazione.get(1));
-        this.componenteSchedaVideo.setText(stampaConfigurazione.get(2));
-        this.componenteSsd.setText(stampaConfigurazione.get(3));
-        this.componenteMonitor.setText(stampaConfigurazione.get(4));
-        this.componenteRaffredamento.setText(stampaConfigurazione.get(5));
-        this.componenteCase.setText(stampaConfigurazione.get(6));
-        this.componenteSchedaMadre.setText(stampaConfigurazione.get(7));
-        this.componenteAlimentatore.setText(stampaConfigurazione.get(8));
-        this.compatibilita.setText(percentualeCompatibilita);
+        System.out.println(stampaConfigurazione.get(0));
+        System.out.println(stampaConfigurazione.get(1));
+        System.out.println(stampaConfigurazione.get(2));
+        System.out.println(stampaConfigurazione.get(3));
+        System.out.println(stampaConfigurazione.get(4));
+        System.out.println(stampaConfigurazione.get(5));
+        System.out.println(stampaConfigurazione.get(6));
+        System.out.println(stampaConfigurazione.get(7));
+        System.out.println(stampaConfigurazione.get(8));
+        System.out.println(percentualeCompatibilita);
+
 
 
 
