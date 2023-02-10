@@ -33,7 +33,7 @@ public class Login {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    private static final String errore="mostra errore utente";
+    private static final String ERRORE="mostra errore utente";
 
     public void switchToEntry(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Entry.fxml")));
@@ -95,7 +95,7 @@ public class Login {
 
             } catch (SQLException e) {
                 Alert alert = new Alert(Alert.AlertType.NONE);
-                alert.setTitle(errore);
+                alert.setTitle(ERRORE);
                 alert.setContentText("SQL errore");
                 alert.show();
             }
@@ -136,7 +136,7 @@ public class Login {
 
         } catch (IOException e) {
             Alert alert = new Alert(Alert.AlertType.NONE);
-            alert.setTitle(errore);
+            alert.setTitle(ERRORE);
             alert.setContentText("IO errore");
             alert.show();
         }
