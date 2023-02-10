@@ -13,17 +13,17 @@
             <Image url="@gui_class/6839531-grey-wallpaper.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnAccedi" layoutX="293.0" layoutY="454.0" minHeight="30.0" minWidth="300.0" mnemonicParsing="false" onAction="#switchToAccedi" prefHeight="85.0" prefWidth="224.0" text="Accedi">
+      <Button fx:id="btnAccedi" layoutX="210.0" layoutY="454.0" minHeight="30.0" minWidth="300.0" mnemonicParsing="false" onAction="#switchToAccedi" prefHeight="85.0" prefWidth="224.0" text="Accedi">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
       </Button>
-      <Button fx:id="btnRegistrati" layoutX="808.0" layoutY="454.0" minHeight="30.0" minWidth="300.0" mnemonicParsing="false" onAction="#switchToRegistrati" prefHeight="85.0" prefWidth="217.0" text="Registrati">
+      <Button fx:id="btnRegistrati" layoutX="770.0" layoutY="454.0" minHeight="30.0" minWidth="300.0" mnemonicParsing="false" onAction="#switchToRegistrati" prefHeight="85.0" prefWidth="217.0" text="Registrati">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
       </Button>
-      <ImageView fitHeight="256.0" fitWidth="326.0" layoutX="538.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="256.0" fitWidth="326.0" layoutX="487.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@gui_class/Logo.jpeg" />
          </image>
