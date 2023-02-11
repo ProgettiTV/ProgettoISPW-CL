@@ -6,9 +6,7 @@ import com.example.pcb.DomandeUtente;
 import com.example.pcb.cl_view.SwitchClassView;
 import com.example.pcb.exception.QueryException;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;

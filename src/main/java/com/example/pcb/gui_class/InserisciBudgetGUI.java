@@ -5,18 +5,9 @@ import com.example.pcb.bean_class.BeanModificaBudget;
 import com.example.pcb.bean_class.BeanMostraVecchioBudget;
 import com.example.pcb.dao_class.DaoBudget;
 import com.example.pcb.exception.DaoException;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Objects;
+
 
 public class InserisciBudgetGUI extends AbstractObserver{
 

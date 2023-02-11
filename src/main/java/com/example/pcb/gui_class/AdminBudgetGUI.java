@@ -4,17 +4,9 @@ import com.example.pcb.bean_class.BeanSelezionaBudget;
 import com.example.pcb.ModificaParametri;
 import com.example.pcb.cl_view.SwitchClassView;
 import com.example.pcb.exception.DaoException;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Objects;
+
 
 public class AdminBudgetGUI{
 
