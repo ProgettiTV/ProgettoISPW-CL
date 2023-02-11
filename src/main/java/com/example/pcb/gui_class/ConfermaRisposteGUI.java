@@ -41,15 +41,9 @@ public class ConfermaRisposteGUI{
             try {
                 riferimentoCapplicativo.prendC(beanConferma);
             } catch (SQLException e) {
-                Alert alert = new Alert(Alert.AlertType.NONE);
-                alert.setTitle(errore);
-                alert.setContentText("errore SQL");
-                alert.show();
+                System.out.println("SQL Exception");
             } catch (QueryException e) {
-                Alert alert = new Alert(Alert.AlertType.NONE);
-                alert.setTitle(errore);
-                alert.setContentText("errore Query");
-                alert.show();
+                System.out.println("Query Exception");
             }
 
             this.componentiGUI=new ComponentiGUI();
@@ -57,15 +51,9 @@ public class ConfermaRisposteGUI{
             try {
                 riferimentoCapplicativo.prendiCGComponenti(componentiGUI);
             } catch (IOException e) {
-                Alert alert = new Alert(Alert.AlertType.NONE);
-                alert.setTitle(errore);
-                alert.setContentText("IO errore");
-                alert.show();
+                System.out.println("IO Exception");
             } catch (SQLException e) {
-                Alert alert = new Alert(Alert.AlertType.NONE);
-                alert.setTitle(errore);
-                alert.setContentText("SQL errore");
-                alert.show();
+                System.out.println("SQL Exception");
             }
             SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
             switchClassView.switchToComponenti(componentiGUI);
