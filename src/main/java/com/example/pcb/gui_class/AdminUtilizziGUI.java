@@ -23,8 +23,8 @@ public class AdminUtilizziGUI{
         beanSelezionaUtilizzo.prendiU(risposta);
 
         ModificaParametri modificaParametri= new ModificaParametri();
-        modificaParametri.prendiRiferimentoBeanU(beanSelezionaUtilizzo);
-        modificaParametri.prendiBeanRiferimentoInviaVecchioU(inserisciUtilizzoGUI);
+        modificaParametri.prendiRiferimentoBeanUtilizzo(beanSelezionaUtilizzo);
+        modificaParametri.prendiBeanRiferimentoInviaVecchioUtilizzo(inserisciUtilizzoGUI);
 
         inserisciUtilizzoGUI.prendiRiferimentoCAU(modificaParametri);
 
