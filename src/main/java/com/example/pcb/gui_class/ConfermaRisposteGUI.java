@@ -37,7 +37,7 @@ public class ConfermaRisposteGUI{
         if (Objects.equals(risposta, "Conferma")){
 
             try {
-                riferimentoCapplicativo.prendC(beanConferma);
+                riferimentoCapplicativo.prendiConferma(beanConferma);
             } catch (SQLException e) {
                 System.out.println("SQL Exception");
             } catch (QueryException e) {

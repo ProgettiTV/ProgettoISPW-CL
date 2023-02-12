@@ -16,7 +16,7 @@ public class RispostaDomandaBudgetGUI{
         String risposta = rispostaUtente;
         BeanBudget b = new BeanBudget(risposta);
         domandeUtente= new DomandeUtente();
-        domandeUtente.prendB(b);
+        domandeUtente.prendiBudget(b);
         SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
         switchClassView.switchToUtilizzo(domandeUtente);
 

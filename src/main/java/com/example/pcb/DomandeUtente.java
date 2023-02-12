@@ -31,24 +31,24 @@ public  class DomandeUtente {
         //costruttore
     }
 
-    public void prendB(BeanBudget b){
+    public void prendiBudget(BeanBudget beanBudget){
 
-        this.budgetProvissorio =b.returnID();
-
-    }
-    public void prendU(BeanUtilizzo u){
-
-        this.utilizzoProvissorio =u.returnStr();
+        this.budgetProvissorio = beanBudget.returnID();
 
     }
+    public void prendiUtilizzo(BeanUtilizzo beanUtilizzo){
 
-    public void getMostraResoconto(BeanMostraResoconto mR) {
-        this.mostraResoconto=mR;
+        this.utilizzoProvissorio = beanUtilizzo.returnStr();
+
+    }
+
+    public void getMostraResoconto(BeanMostraResoconto mostraResoconto) {
+        this.mostraResoconto= mostraResoconto;
         invioResoconto();
     }
 
-    public void prendC(BeanConferma c) throws QueryException, SQLException{
-         Boolean confermatoRisposte= c.returnBool();
+    public void prendiConferma(BeanConferma beanConferma) throws QueryException, SQLException{
+         Boolean confermatoRisposte= beanConferma.returnBool();
 
         if(Boolean.TRUE.equals(confermatoRisposte)){
 

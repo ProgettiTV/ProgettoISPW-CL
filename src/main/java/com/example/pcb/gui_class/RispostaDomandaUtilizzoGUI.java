@@ -27,7 +27,7 @@ public class RispostaDomandaUtilizzoGUI{
         String rispostaU = risposta;
 
         BeanUtilizzo u = new BeanUtilizzo(risposta);
-        istanzaCA.prendU(u);
+        istanzaCA.prendiUtilizzo(u);
 
         SwitchClassView switchClassView = SwitchClassView.getSwitchClassViewInstance();
         switchClassView.switchToConferma(istanzaCA);
